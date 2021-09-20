@@ -74,10 +74,10 @@ $(function(){
     observer: true,
 		observeParents: true,
     autoplay: false,
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
     loopedSlides: 6,
     pagination: {
       el: ".swiper-pagination",

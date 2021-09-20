@@ -50,7 +50,7 @@ $(function(){
   var galleryThumbsMain = new Swiper('.gallery_thumbs', {
     spaceBetween: 5,
     slidesPerView: 6,
-    loop: false,
+    loop: true,
     autoplay: false,
     observer: true,
 		observeParents: true,
@@ -70,10 +70,10 @@ $(function(){
   var galleryTopMain = new Swiper('.gallery_top', {
     spaceBetween: 5,
     effect: 'fade',
-    loop: false,
+    loop: true,
     observer: true,
 		observeParents: true,
-    autoplay: false,
+    // autoplay: false,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,

@@ -1,15 +1,4 @@
 @charset "utf-8"; /* common*/
-.a11y-hidden {
-  overflow: hidden;
-  position: absolute;
-  clip: rect(0, 0, 0, 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-}
-
 img {
   border: 0;
   max-width: 100%;
@@ -1106,7 +1095,7 @@ body.sub .filter-box .filter .order > div.on:before {
   height: 2px;
   background: rgba(0, 0, 0, 0.1);
   position: relative;
-  margin-right: 24px;
+  margin-right: 23px;
 }
 .series_book_slider .control .progressbar .swiper-pagination-progressbar-fill {
   background: #000;

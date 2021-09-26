@@ -19,9 +19,6 @@ $(function(){
   $(".topten .ico_arrow").on('click', function (e) {
     $('.topten').addClass('list_open');
     rankSwiper.slideTo(1, 0, false);
-    // $(".swiper-wrapper").css("transform", "translate3d(0px, -33px, 0px)");
-    
-    // $(".swiper-slide").css("height", "33px");
     rankSwiper.autoplay.stop();
     return false;
   });
@@ -74,11 +71,10 @@ $(function(){
     touchRatio: 0.3,
     slideToClickedSlide: true,
     freeMode: false,
-    loopedSlides: 6, //looped slides should be the same
+    loopedSlides: 6, 
     watchSlidesVisibility: true,
     watchSlidesProgress: true,
     breakpoints: {
-      // when window width is >= 320px
       1140: {
         spaceBetween: 10
       }
@@ -99,12 +95,14 @@ $(function(){
       clickable:true
     },
     breakpoints: {
-      // when window width is >= 320px
       1140: {
         spaceBetween: 0
       },
       768: {
-        autoplay: false
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
       }
     }
   });
@@ -112,7 +110,7 @@ $(function(){
   galleryThumbsMain.controller.control = galleryTopMain;
 
 //시리즈 슬라이드
-  var seriesBookCont = new Swiper(".series_book_cont", {
+  var seriesCont01 = new Swiper(".series_cont_01", {
     slidesPerView: 4, 
     spaceBetween: 20,
     loop:false,

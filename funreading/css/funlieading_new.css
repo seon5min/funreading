@@ -75,7 +75,6 @@ button.fl_btn .ico_view::after {
     left;
   background-size: cover;
 }
-
 .main-slide-con {
   position: relative;
   height: 460px;
@@ -129,6 +128,7 @@ button.fl_btn .ico_view::after {
 }
 .main-slide-con .photo > a {
   display: block;
+  display: -webkit-box;
   width: 100%;
   height: 100%;
 }
@@ -139,8 +139,8 @@ button.fl_btn .ico_view::after {
 }
 .main-slide-con .summary {
   flex-grow: 1;
-  flex-basis: 0; /* flex: 1; */
-  margin-left: 38px; /* position: relative; left: 275px; width: 55%; z-index: 2; */
+  flex-basis: 0; 
+  margin-left: 38px;
 }
 .main-slide-con .summary_title {
   padding-top: 55px;
@@ -155,8 +155,6 @@ button.fl_btn .ico_view::after {
   margin-bottom: 5px;
   width: 100%;
   max-width: 650px;
-  display: -webkit-box;
-  display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -184,8 +182,6 @@ button.fl_btn .ico_view::after {
   line-height: 1.4;
   width: 100%;
   max-width: 650px;
-  display: -webkit-box;
-  display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -208,6 +204,7 @@ button.fl_btn .ico_view::after {
 }
 .main-slide-con .summary_description .level {
   display: block;
+  display: -webkit-box;
   font-size: 14px;
   font-weight: 400;
   letter-spacing: -0.5px;
@@ -242,7 +239,7 @@ button.fl_btn .ico_view::after {
   transform: rotate(45deg);
 }
 
-/* */
+/* thumbs */
 .main_banner_wrap .thumbs_con {
   position: relative;
   max-width: 1140px;
@@ -264,6 +261,7 @@ button.fl_btn .ico_view::after {
   position: relative;
   height: 10rem;
   display: block;
+  display: -webkit-box;
   cursor: pointer;
   font-size: 0;
   line-height: 0;
@@ -277,6 +275,7 @@ button.fl_btn .ico_view::after {
   box-sizing: border-box;
   vertical-align: bottom;
   display: block;
+  display: -webkit-box;
   border-radius: 5px;
 }
 .main_banner_wrap .gallery_thumbs .swiper-slide.swiper-slide-active img {
@@ -312,6 +311,7 @@ button.fl_btn .ico_view::after {
 .thumbs_con:before {
   content: "";
   display: block;
+  display: -webkit-box;
   position: absolute;
   bottom: 215px;
   right: 0;
@@ -373,12 +373,12 @@ button.fl_btn .ico_view::after {
   overflow: hidden;
   margin: 7px 0 0 0;
 }
-
 .book_topten .topten .swiper-slide {
   height: 33px !important;
 }
 .book_topten .swiper-slide a {
   display: block;
+  display: -webkit-box;
   max-width: 230px;
   flex-wrap: nowrap;
   padding: 5px 0;
@@ -424,7 +424,6 @@ button.fl_btn .ico_view::after {
 .book_topten .topten.list_open .ico_arrow {
   pointer-events: none;
 }
-
 .book_topten .ico_arrow::before {
   display: inline-block;
   width: 7px;
@@ -443,9 +442,9 @@ button.fl_btn .ico_view::after {
 .book_topten .m_ico_arrow {
   display: none;
 }
-
 .book_topten .swiper-container.topten.list_open {
   display: block;
+  display: -webkit-box;
   height: 375px;
   width: 230px;
   padding: 5px 0 0 0;
@@ -462,7 +461,6 @@ button.fl_btn .ico_view::after {
   overflow: hidden;
   height: 368px;
 }
-
 .book_topten .topten.list_open .swiper-slide-duplicate-active {
   display: none;
 }
@@ -507,7 +505,6 @@ button.fl_btn .ico_view::after {
   text-align: center;
   line-height: 1.2;
 }
-
 .book_search {
   width: 50%;
   max-width: 570px;
@@ -529,7 +526,6 @@ button.fl_btn .ico_view::after {
   white-space: nowrap;
   letter-spacing: -0.5px;
 }
-
 .book_search .search_bar {
   position: relative;
   width: 378px;
@@ -541,9 +537,9 @@ button.fl_btn .ico_view::after {
   width: 308px;
   max-width: 100%;
   height: 22px;
-  font-size: 17px;
+  font-size: 18px;
   padding: 12.5px 50px 12.5px 20px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: -0.5px;
   color: #1e1e23;
   border: 0;
@@ -603,87 +599,73 @@ button.fl_btn .ico_view::after {
   vertical-align: top;
   color: #464646;
 }
-.tab_wrap ul li.on a {
-  color: #f57d24;
-}
 
 .tab_wrap ul li a.all_category {
-  background: url("../images/funreading/icon/category/all_off.png") top center
+  background: url("../images/funreading/icon/category/all_ico.png") top center
     no-repeat;
-  color: #464646;
-  background-size: 35px;
+}
+.tab_wrap ul li.on a.all_category {
+  background: url("../images/funreading/icon/category/all_ico.png") bottom center
+    no-repeat;
+    color: #f57d24;
+  background-position-y: -102px;
 }
 .tab_wrap ul li a.series_category {
-  background: url("../images/funreading/icon/category/series_off.png") top
-    center no-repeat;
-  color: #464646;
-  background-size: 35px;
-}
-.tab_wrap ul li a.novel_category {
-  background: url("../images/funreading/icon/category/novel_off.png") top center
+  background: url("../images/funreading/icon/category/series_ico.png") top center
     no-repeat;
-  color: #464646;
-  background-size: 35px;
-}
-.tab_wrap ul li a.nonfiction_category {
-  background: url("../images/funreading/icon/category/nonfiction_off.png") top
-    center no-repeat;
-  color: #464646;
-  background-size: 35px;
-}
-.tab_wrap ul li a.phoenix_category {
-  background: url("../images/funreading/icon/category/phoenix_off.png") top
-    center no-repeat;
-  color: #464646;
-  background-size: 35px;
-}
-.tab_wrap ul li a.cartoon_category {
-  background: url("../images/funreading/icon/category/cartoon_off.png") top
-    center no-repeat;
-  color: #464646;
-  background-size: 35px;
-}
-
-.tab_wrap ul li.on a.all_category {
-  background: url("../images/funreading/icon/category/all_on.png") top center
-    no-repeat;
-  color: #f57d24;
-  background-size: 35px;
 }
 .tab_wrap ul li.on a.series_category {
-  background: url("../images/funreading/icon/category/series_on.png") top center
+  background: url("../images/funreading/icon/category/series_ico.png") bottom center
     no-repeat;
-  color: #f57d24;
-  background-size: 35px;
+    color: #f57d24;
+  background-position-y: -102px;
+}
+.tab_wrap ul li a.novel_category {
+  background: url("../images/funreading/icon/category/novel_ico.png") top center
+    no-repeat;
 }
 .tab_wrap ul li.on a.novel_category {
-  background: url("../images/funreading/icon/category/novel_on.png") top center
+  background: url("../images/funreading/icon/category/novel_ico.png") bottom center
     no-repeat;
-  color: #f57d24;
-  background-size: 35px;
+    color: #f57d24;
+  background-position-y: -102px;
+}
+.tab_wrap ul li a.nonfiction_category {
+  background: url("../images/funreading/icon/category/nonfiction_ico.png") top center
+    no-repeat;
 }
 .tab_wrap ul li.on a.nonfiction_category {
-  background: url("../images/funreading/icon/category/nonfiction_on.png") top
-    center no-repeat;
-  color: #f57d24;
-  background-size: 35px;
+  background: url("../images/funreading/icon/category/nonfiction_ico.png") bottom center
+    no-repeat;
+    color: #f57d24;
+  background-position-y: -102px;
+}
+.tab_wrap ul li a.phoenix_category {
+  background: url("../images/funreading/icon/category/phoenix_ico.png") top center
+    no-repeat;
 }
 .tab_wrap ul li.on a.phoenix_category {
-  background: url("../images/funreading/icon/category/phoenix_on.png") top
-    center no-repeat;
-  color: #f57d24;
-  background-size: 35px;
+  background: url("../images/funreading/icon/category/phoenix_ico.png") bottom center
+    no-repeat;
+    color: #f57d24;
+  background-position-y: -102px;
+}
+.tab_wrap ul li a.cartoon_category {
+  background: url("../images/funreading/icon/category/cartoon_ico.png") top center
+    no-repeat;
 }
 .tab_wrap ul li.on a.cartoon_category {
-  background: url("../images/funreading/icon/category/cartoon_on.png") top
-    center no-repeat;
-  color: #f57d24;
-  background-size: 35px;
+  background: url("../images/funreading/icon/category/cartoon_ico.png") bottom center
+    no-repeat;
+    color: #f57d24;
+  background-position-y: -102px;
 }
+
+
 .tab_wrap ul li span {
   position: relative;
   z-index: 1;
-  margin: 40px auto 0;
+  margin: 44px auto 0;
   font-size: 18px;
   line-height: 1.4;
   text-align: center;
@@ -715,7 +697,7 @@ button.fl_btn .ico_view::after {
 
 /* category TAB - Series 시리즈 */
 .category_wrap {
-  margin: 100px auto 100px;
+  margin: 93px auto 100px;
   width: 100%;
   max-width: 1140px;
 }
@@ -733,14 +715,16 @@ button.fl_btn .ico_view::after {
   font-weight: 700;
   font-size: 30px;
   margin-bottom: 5px;
-  line-height: 1.5;
+  line-height: 1.33;
+  letter-spacing: -0.75px;
   color: #242424;
 }
 .category_wrap .title_container .title p.sub_tit {
   font-weight: 500;
-  font-size: 24px;
-  line-height: 1.5;
+  font-size: 26px;
+  line-height: 1.33;
   color: #242424;
+  letter-spacing: -1.3px;
 }
 .category_wrap .title_container .filter-box {
   width: 50% !important;
@@ -847,9 +831,8 @@ body.sub .filter-box .filter .order > div.on:before {
   height: 40px;
   font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 22px;
   margin: 15px 0;
-  max-height: 3em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -870,6 +853,7 @@ body.sub .filter-box .filter .order > div.on:before {
   height: 20px;
   border: 1px solid #7e7e7e;
   border-radius: 20px;
+  margin-bottom: 5px;
 }
 
 /* 전체보기 */
@@ -881,9 +865,7 @@ body.sub .filter-box .filter .order > div.on:before {
   cursor: pointer;
   background: #fff;
   border: 1px solid #7e7e7e;
-  /* border-radius: 100px; */
-  /* padding: 7px 25px; */
-  font-size: 17px;
+  font-size: 16px;
   line-height: 18px;
   letter-spacing: -0.5px;
   color: #7e7e7e;
@@ -897,11 +879,11 @@ body.sub .filter-box .filter .order > div.on:before {
   width: 9px;
   height: 9px;
   content: "";
-  margin-top: -5px;
+  margin-top: -3px;
   margin-left: 10px;
   vertical-align: middle;
-  border-top: 2px solid #ddd;
-  border-left: 2px solid #ddd;
+  border-top: 1px solid #7e7e7e;
+  border-left: 1px solid #7e7e7e;
   -webkit-transform: rotate(-135deg);
   -moz-transform: rotate(-135deg);
   -ms-transform: rotate(-135deg);
@@ -922,6 +904,7 @@ body.sub .filter-box .filter .order > div.on:before {
   max-width: 100%;
   max-height: 100%;
   display: block;
+  display: -webkit-box;
 }
 .series_info_thumbs .book_thumbnail img {
   width: 100%;
@@ -931,32 +914,42 @@ body.sub .filter-box .filter .order > div.on:before {
 }
 
 .series_info_thumbs .book_info h2 {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 500;
+  letter-spacing: -1.4px;
   text-align: left;
-  line-height: 1.33;
-  margin-top: 10px;
+  line-height: 40px;
+  margin-top: 2px;
   color: #222;
   word-wrap: break-word;
   word-break: keep-all;
 }
 .series_info_thumbs .book_info .book_txt {
-  font-size: 14px;
-  line-height: 1.33;
-  margin-top: 30px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing:-0.8px;
+  margin-top: 25px;
   color: #222;
   word-wrap: break-word;
   word-break: keep-all;
 }
 .series_info_thumbs .book_info .book_count {
-  margin-top: 40px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.35px;
+  margin-top: 30px;
   color: #7e7e7e;
   line-height: 1.33;
 }
 .series_info_thumbs .book_info .series_btn {
-  margin-top: 100px;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: -0.35px;
+  margin-top: 80px;
   color: #7e7e7e;
   line-height: 1.33;
+
 }
 .series_info_thumbs .series_btn a::after {
   display: inline-block;
@@ -977,6 +970,7 @@ body.sub .filter-box .filter .order > div.on:before {
 
 .series_info_thumbs .book_thumbnail .ico.add {
   display: block;
+  display: -webkit-box;
   position: absolute;
   width: 26px;
   height: 37px;
@@ -1008,6 +1002,7 @@ body.sub .filter-box .filter .order > div.on:before {
   content: "";
   clear: both;
   display: block;
+  display: -webkit-box;
 }
 .series_book_cont .swiper-slide .books > div {
   /* width: inherit; position: absolute; bottom: 0; overflow: hidden; max-height: 100%; background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%); border-radius: 0 4px 4px 0; box-shadow: 2px 2px 6px rgb(0 0 0 / 10%), 0 0 2px rgb(0 0 0 / 20%); */
@@ -1040,6 +1035,15 @@ body.sub .filter-box .filter .order > div.on:before {
   width: 38px;
   height: 38px;
 }
+.series_book_slider .control .swiper-button-prev.swiper-button-disabled,
+.series_book_slider .control .swiper-button-next.swiper-button-disabled {
+  background: transparent;
+  opacity: 1;
+}
+.series_book_slider .control .swiper-button-prev.swiper-button-disabled:before,
+.series_book_slider .control .swiper-button-next.swiper-button-disabled:before {
+  opacity: 1;
+}
 .series_book_slider .control .swiper-button-prev:before {
   display: inline-block;
   top: 0;
@@ -1051,6 +1055,16 @@ body.sub .filter-box .filter .order > div.on:before {
   background-size: cover;
   content: "";
 }
+.series_book_slider .control .swiper-button-prev.swiper-button-disabled:before {
+  background: url(https://www.ebse.co.kr/images/main/body_slide_left.png)
+    no-repeat right top;
+    background-size: cover;
+}
+.series_book_slider .control .swiper-button-next.swiper-button-disabled:before {
+  background: url(https://www.ebse.co.kr/images/main/body_slide_right.png)
+    no-repeat right top;
+    background-size: cover;
+}
 .series_book_slider .control .swiper-button-next:before {
   display: inline-block;
   top: 0;
@@ -1061,14 +1075,6 @@ body.sub .filter-box .filter .order > div.on:before {
     no-repeat -1px top;
   background-size: cover;
   content: "";
-}
-.series_book_slider .control .swiper-button-prev.swiper-button-disabled,
-.series_book_slider .control .swiper-button-next.swiper-button-disabled {
-  background: transparent;
-}
-.series_book_slider .control .swiper-button-prev.swiper-button-disabled:before,
-.series_book_slider .control .swiper-button-next.swiper-button-disabled:before {
-  opacity: 1;
 }
 
 .series_book_slider .control .progressbar {
@@ -1100,7 +1106,7 @@ body.sub .filter-box .filter .order > div.on:before {
   height: 2px;
   background: rgba(0, 0, 0, 0.1);
   position: relative;
-  margin-right: 25px;
+  margin-right: 24px;
 }
 .series_book_slider .control .progressbar .swiper-pagination-progressbar-fill {
   background: #000;
@@ -1156,7 +1162,7 @@ body.sub .filter-box .filter .order > div.on:before {
   width: calc(100vw - 100px);
   max-width: 1140px;
   min-height: 188px;
-  padding: 60px 20px 20px;
+  padding: 80px 20px 20px;
   background: #fff;
   border-radius: 6px;
   box-shadow: 0 5px 32px 0 rgba(15, 15, 15, 0.15);
@@ -1203,6 +1209,7 @@ body.sub .filter-box .filter .order > div.on:before {
 }
 .container_fluid .fluid_thumb a {
   display: block;
+  display: -webkit-box;
   width: 100%;
 }
 .container_fluid .fluid_thumb li {
@@ -1218,11 +1225,10 @@ body.sub .filter-box .filter .order > div.on:before {
 .container_fluid .fluid_thumb li .thumb_book {
   -webkit-line-clamp: 2;
   height: 40px;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
+  line-height: 22px;
   margin: 15px 0;
-  max-height: 3em;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -1243,6 +1249,7 @@ body.sub .filter-box .filter .order > div.on:before {
   height: 20px;
   border: 1px solid #7e7e7e;
   border-radius: 20px;
+  margin-bottom: 5px;
 }
 /* ==========================================================================
 Media Queries for Responsive Design.
@@ -1266,13 +1273,7 @@ Media Queries for Responsive Design.
     max-width: 360px;
     min-width: 70%;
   }
-  .main-slide-con .summary_title .series_tit a {
-    position: relative;
-    z-index: 1;
-  }
-  .main-slide-con .summary_title .series_tit a::after {
-    height: 1px;
-  }
+
   .main-slide-con .summary_title .series_subtit {
     font-size: 18px;
     max-width: 360px;
@@ -1346,6 +1347,7 @@ Media Queries for Responsive Design.
     background: rgba(255, 255, 255, 0.6);
     content: "";
     display: block;
+    display: -webkit-box;
     z-index: 2;
   }
   .main-slide-con::before {
@@ -1356,6 +1358,7 @@ Media Queries for Responsive Design.
     height: 150px;
     content: "";
     display: block;
+    display: -webkit-box;
     background: url("../images/funreading/banner/thumb_box_shadow.png")
       no-repeat;
     z-index: 1;
@@ -1374,6 +1377,7 @@ Media Queries for Responsive Design.
   }
   .book_topten .m_topten_txt {
     display: block;
+    display: -webkit-box;
     margin-right: 15px;
     color: #fff;
     font-size: 20px;
@@ -1462,7 +1466,7 @@ Media Queries for Responsive Design.
     width: 100%;
     overflow: hidden;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 8px 20px 0;
   }
   .series_slide_wrap .series_book_cont {
     max-width: 100%;
@@ -1490,6 +1494,7 @@ Media Queries for Responsive Design.
     max-width: 100%;
     min-height: 80px;
     display: block;
+    display: -webkit-box;
     max-width: -moz-max-content;
   }
   .series_book_slider {
@@ -1506,6 +1511,7 @@ Media Queries for Responsive Design.
   }
   .series_book_slider .control .count {
     display: block;
+    display: -webkit-box;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: -0.5px;
@@ -1559,8 +1565,8 @@ Media Queries for Responsive Design.
   .book_topten .m_ico_arrow {
     display: block;
     position: absolute;
-    top: 3px;
-    right: 0;
+    top: 1px;
+    right: 3px;
     width: 40px;
     height: 40px;
     text-align: center;
@@ -1593,7 +1599,6 @@ Media Queries for Responsive Design.
     border-right: 10px solid transparent;
     z-index: 100;
   }
-
   .book_topten .swiper-container.topten.list_open .m_ico_arrow {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
@@ -1709,8 +1714,9 @@ Media Queries for Responsive Design.
     text-overflow: ellipsis;
     word-break: break-all;
     display: block;
+    display: -webkit-box;
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.9;
     letter-spacing: -1.125px;
     font-weight: 600;
     max-width: 100%;
@@ -1745,6 +1751,7 @@ Media Queries for Responsive Design.
     -webkit-box-orient: vertical;
     word-break: break-all;
     display: block;
+    display: -webkit-box;
     font-size: 12px;
     line-height: 1.5;
     letter-spacing: -0.25px;
@@ -1826,11 +1833,14 @@ Media Queries for Responsive Design.
     box-sizing: border-box;
   }
   .tab_wrap ul li a {
-    background-size: 26px !important;
+    background-size: 30px !important;
+} 
+  .tab_wrap ul li.on a {
+    background-position-y: -81px !important;
   }
   .tab_wrap ul li span {
-    margin: 30px auto 0;
-    font-size: 14px;
+    margin: 32px auto 0;
+    font-size: 13.5px;
   }
   .main-slide-con {
     height: 100%;
@@ -1844,7 +1854,7 @@ Media Queries for Responsive Design.
     position: relative;
     min-height: 147px;
     max-width: 97px;
-    margin: 22px 0 12px;
+    margin: 22px 0 8px;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
@@ -1921,6 +1931,7 @@ Media Queries for Responsive Design.
   }
   .main-slide-con .text li.more_btn > a {
     display: block;
+    display: -webkit-box;
     width: 182px;
     height: 45px;
     font-size: 24px;
@@ -1989,7 +2000,6 @@ Media Queries for Responsive Design.
   }
   .category_wrap .title_container .title p.sub_tit {
     font-size: 16px;
-    font-weight: 400;
   }
   .category_wrap .title_container .filter-box {
     background: #fff;
@@ -2049,13 +2059,27 @@ Media Queries for Responsive Design.
   }
   .series_info_thumbs .book_info h2 {
     font-size: 15px;
-    letter-spacing: -0.5px;
+    line-height: 1.4;
+    margin-top: 10px;
   }
   .series_info_thumbs .book_info .book_txt {
     font-size: 13px;
-    letter-spacing: -0.5px;
+    line-height: 1.4;
     margin-top: 10px;
   }
+  .series_more_btn {
+    margin: 0 auto;
+    font-size: 13.5px;
+    line-height: 18px;
+    letter-spacing: -0.325px;
+    width: 110px;
+    height: 30px;
+}
+.series_more_btn::after {
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+}
   .book_count,
   .series_btn,
   .control .sl-nav {
@@ -2065,7 +2089,11 @@ Media Queries for Responsive Design.
   /* series slider */
   .series_slide_wrap .series_book_cont {
     max-width: 100%;
-    padding-left: 17px;
+    overflow: visible;
+    margin-left: 0;
+    margin-right: 0;
+    padding-bottom: 0;
+    padding-top: 0;
   }
   .series_slide_wrap .series_book_cont .swiper-wrapper {
     -ms-flex-align: baseline;
@@ -2090,12 +2118,13 @@ Media Queries for Responsive Design.
     max-width: 100%;
     min-height: 80px;
     display: block;
+    display: -webkit-box;
     max-width: -moz-max-content;
   }
   .series_book_slider {
     width: 100%;
     max-width: 100%;
-    padding: 13px 0 100px 0;
+    padding: 13px 17px 100px;
   }
   .series_book_slider .control {
     left: 17px;
@@ -2143,7 +2172,7 @@ Media Queries for Responsive Design.
   .book_search .search_bar > input {
     max-width: 158px;
   }
-  /* .main-slide-con .summary_description .book_tit > a {
+  .main-slide-con .summary_description .book_tit > a {
     overflow: hidden;
     text-align: left;
     -webkit-line-clamp: 2;
@@ -2152,25 +2181,15 @@ Media Queries for Responsive Design.
     word-break: break-all;
     display: block;
     display: -webkit-box;
-    font-size: 18px;
     max-width: 100%;
-    line-height: 1.5;
-    letter-spacing: -0.06rem;
-    margin: 0 auto;
-    font-weight: 500;
-    color: #222;
-    white-space: normal;
-    text-align: center;
+
   } 
   .main-slide-con .summary_description .level {
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.04rem;
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    /* margin-top: 5px; */
   }
   .main-slide-con .summary_description .level:before {
     top: 5px;
-  }  */
+  }  
 }

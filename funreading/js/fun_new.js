@@ -133,20 +133,20 @@ $(function(){
     breakpoints: {
       // when window width is >= 320px
       1140: {
-
+        slidesPerView: 4,
+        slidesPerGroup:4,
+        spaceBetween: 20,
       },
       768: {
         slidesPerView: "auto",
         spaceBetween: 18,
-        // touchRatio: 0.1,
+        touchRatio: 0.3,
         slideToClickedSlide: true,
-        // freeMode: false,
+        freeMode: false,
       }
     }
     
   });
-
-
 
 
   
@@ -154,23 +154,22 @@ $(function(){
   //   $('.series_slide_wrap .series_book_cont').css("padding-left","10px");
   // });
 
-  var numOfSlides = document.querySelectorAll(".swiper-slide").length;
-  console.log("numOfSlides: " + numOfSlides);/* 3 */
+  // var numOfSlides = document.querySelectorAll(".series_slide_wrap .swiper-slide").length;
+  // console.log("numOfSlides: " + numOfSlides);
+  // $(".count .total").html(numOfSlides);
 
-  // 모달창
-
-  //modal 
-$('.series_more_btn').on('click', function (e) {
-  e.preventDefault();
-  $('.modal').addClass('modal-opened');
-  $('body').addClass('bodyscroll');
-});
-$('.btn-modal-close').on('click', function (e) {
-  var body = document.body;
-  e.preventDefault();
-  $('.modal').removeClass('modal-opened');
-  $(body).removeClass('bodyscroll');
-});
+    //modal 
+  $('.series_more_btn').on('click', function (e) {
+    e.preventDefault();
+    $('.modal').addClass('modal-opened');
+    $('body').addClass('bodyscroll');
+  });
+  $('.btn-modal-close').on('click', function (e) {
+    var body = document.body;
+    e.preventDefault();
+    $('.modal').removeClass('modal-opened');
+    $(body).removeClass('bodyscroll');
+  });
 
 
 

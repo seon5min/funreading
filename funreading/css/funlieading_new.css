@@ -2116,7 +2116,7 @@ Media Queries for Responsive Design.
   .series_book_cont .swiper-wrapper .swiper-slide img {
     width: inherit;
     max-width: 100%;
-    min-height: 80px;
+    min-height: auto;
     display: block;
     display: -webkit-box;
     max-width: -moz-max-content;
@@ -2124,12 +2124,13 @@ Media Queries for Responsive Design.
   .series_book_slider {
     width: 100%;
     max-width: 100%;
-    padding: 13px 17px 100px;
+    padding: 13px 17px 74px;
   }
   .series_book_slider .control {
     left: 17px;
     right: 0;
-    bottom: -42.5px;
+    bottom: 5px;
+    height: 30px;
   }
 
   .series_book_slider .control .progressbar {
@@ -2157,6 +2158,7 @@ Media Queries for Responsive Design.
     height: 18px;
   }
 
+  .slide_seciton_02,.slide_seciton_03,.slide_seciton_04,.slide_seciton_05 {margin-top: 65px;}
 
   /* 모달 컨텐츠 */
   .modal_body {
@@ -2168,10 +2170,15 @@ Media Queries for Responsive Design.
   }
 }
 
-@media only screen and (max-width: 340px) {
+@media only screen and (max-width: 400px) {
   .book_search .search_bar > input {
-    max-width: 158px;
+    width: 158px;
   }
+  .main-slide-con .summary_description .level:before {
+    top: .5px;
+  }  
+}
+@media only screen and (max-width: 375px) {
   .main-slide-con .summary_description .book_tit > a {
     overflow: hidden;
     text-align: center;
@@ -2182,9 +2189,5 @@ Media Queries for Responsive Design.
     display: block;
     display: -webkit-box;
     max-width: 100%;
-
   } 
-  .main-slide-con .summary_description .level:before {
-    top: 5px;
-  }  
 }

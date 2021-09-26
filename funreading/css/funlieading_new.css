@@ -2168,13 +2168,13 @@ Media Queries for Responsive Design.
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 340px) {
   .book_search .search_bar > input {
     max-width: 158px;
   }
   .main-slide-con .summary_description .book_tit > a {
     overflow: hidden;
-    text-align: left;
+    text-align: center;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
@@ -2184,11 +2184,6 @@ Media Queries for Responsive Design.
     max-width: 100%;
 
   } 
-  .main-slide-con .summary_description .level {
-    display: flex;
-    justify-content: center;
-    /* margin-top: 5px; */
-  }
   .main-slide-con .summary_description .level:before {
     top: 5px;
   }  

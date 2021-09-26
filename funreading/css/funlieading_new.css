@@ -1300,20 +1300,10 @@ Media Queries for Responsive Design.
     padding: 2px 0;
   }
   .main-slide-con .summary .funread_btn::after {
-    display: inline-block;
     width: 6px;
     height: 6px;
     content: "";
     margin-top: -3px;
-    margin-left: 5px;
-    vertical-align: middle;
-    border-top: 1px solid #222;
-    border-right: 1px solid #222;
-    -webkit-transform: rotate(-45deg);
-    -moz-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(45deg);
   }
 
   /* 갤러리 작은 섬네일 */
@@ -1677,7 +1667,7 @@ Media Queries for Responsive Design.
   }
 
   .main_banner_wrap .swiper-container {
-    /* height: 423px; */
+    height: 423px;
   }
   .main_banner_wrap .gallery_top .swiper-slide {
     background: url(../images/funreading/banner/m_banner_01.jpg) no-repeat
@@ -1702,14 +1692,14 @@ Media Queries for Responsive Design.
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    height: 260px;
-    margin-bottom: 54px;
+    /* height: 260px; */
+    margin-bottom: 42px;
   }
   .main-slide-con .summary_title {
     padding-top: 0;
   }
   .main-slide-con .summary_description {
-    margin-top: 22px;
+    margin-top: 14px;
   }
   .main-slide-con .summary_title .series_tit {
     overflow: hidden;
@@ -1719,9 +1709,9 @@ Media Queries for Responsive Design.
     text-overflow: ellipsis;
     word-break: break-all;
     display: block;
-    font-size: 18px;
-    line-height: 1.8;
-    letter-spacing: -0.5px;
+    font-size: 15px;
+    line-height: 1.7;
+    letter-spacing: -1.125px;
     font-weight: 600;
     max-width: 100%;
     margin: 0 auto;
@@ -1737,37 +1727,29 @@ Media Queries for Responsive Design.
     display: none;
   }
   .main-slide-con .summary_title .series_subtit {
-    margin: 22px auto 0;
-    overflow: hidden;
+    margin: 12px auto 0;
     text-align: center;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     word-break: break-all;
-    display: block;
-    display: -webkit-box;
-    font-size: 18px;
-    line-height: 1.5;
-    letter-spacing: -0.5px;
+    font-size: 14px;
+    letter-spacing: -0.7px;
     max-width: 100%;
     font-weight: 500;
-    color: #222;
     white-space: normal;
   }
 
   .main-slide-con .summary_description .book_tit {
-    overflow: hidden;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
     word-break: break-all;
     display: block;
-    font-size: 16px;
-    max-width: 100%;
+    font-size: 12px;
     line-height: 1.5;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.25px;
     margin: 0 auto;
-    font-weight: 500;
+    font-weight: 400;
     color: #222;
     white-space: normal;
     text-align: center;
@@ -1775,27 +1757,35 @@ Media Queries for Responsive Design.
   .main-slide-con .summary_description .level {
     display: inline-block;
     margin-top: 0;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.6px;
   }
   .main-slide-con .summary_description .level:before {
     position: relative;
     top: 1px;
     display: inline-block;
     width: 1px;
-    height: 13px;
+    height: 10px;
+    line-height: 10px;
     margin: 0 10px;
     background-color: #898989;
     content: "";
   }
   .main-slide-con .summary .funread_btn {
-    font-size: 14px;
-    max-width: 91px;
-    padding: 2px 5px;
-    margin: 22px auto 0;
-    box-sizing: content-box;
+    font-size: 12px;
+    width: 91px;
+    height: 22.5px;
+    letter-spacing: -0.3px;
+    padding: 0;
+    margin: 16px auto 0;
   }
+  .main-slide-con .summary .funread_btn::after {
+    width: 5px;
+    height: 5px;
+    content: "";
+    margin-top: -3.5px;
+}
   .tab_wrap {
     display: flex;
     display: -webkit-box;
@@ -1844,7 +1834,7 @@ Media Queries for Responsive Design.
   }
   .main-slide-con {
     height: 100%;
-    /* max-height: 423px; */
+    max-height: 423px;
     -webkit-box-orient: vertical;
     -ms-flex-direction: column;
     flex-direction: column;
@@ -1852,9 +1842,9 @@ Media Queries for Responsive Design.
   }
   .main-slide-con > .photo {
     position: relative;
-    min-height: 130px;
-    max-width: 86px;
-    margin: 30px 0;
+    min-height: 147px;
+    max-width: 97px;
+    margin: 22px 0 12px;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
@@ -1956,7 +1946,7 @@ Media Queries for Responsive Design.
     transform: rotate(45deg);
   }
   .main-slide-con > .photo > a > img {
-    max-width: 86px;
+    max-width: 97px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -1969,14 +1959,14 @@ Media Queries for Responsive Design.
   .main_banner_wrap .slick-dots {
     width: 100%;
     position: absolute;
-    bottom: 20px;
+    bottom: 17px;
     list-style: none;
     z-index: 10;
   }
   .main_banner_wrap .slick-dots span {
-    width: 12px;
-    height: 12px;
-    margin: 0 6px;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
   }
   /* .main_banner_wrap ul.slick-dots span:not(.swiper-pagination-bullet-active) { top: 1px; } */
   .main_banner_wrap .slick-dots span.swiper-pagination-bullet-active {
@@ -2137,6 +2127,7 @@ Media Queries for Responsive Design.
     width: 34px;
     height: 18px;
   }
+
 
   /* 모달 컨텐츠 */
   .modal_body {

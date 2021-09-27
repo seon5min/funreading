@@ -147,6 +147,7 @@ button.fl_btn .ico_view::after {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  max-height: 4em; /* 두 줄 */
 }
 .main-slide-con .summary_title .series_tit a {
   position: relative;
@@ -2097,7 +2098,7 @@ Media Queries for Responsive Design.
   .swiper-container .swiper-wrapper .swiper-slide img {
     width: inherit;
     max-width: 100%;
-    min-height: auto;
+    max-height: 150px;
     display: block;
     display: -webkit-box;
     max-width: -moz-max-content;

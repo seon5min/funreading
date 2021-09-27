@@ -9,9 +9,8 @@ $(function(){
     },
     loop: true,
     allowTouchMove: false,
-    // observer: true,	// 추가
-    // observeParents: true,	// 추가    
   });
+
   $(window).on('resize', function() {
     $(".book_topten .swiper-wrapper").css("transform", "translate3d(0px, -33px, 0px)");
   });
@@ -22,6 +21,7 @@ $(function(){
     rankSwiper.autoplay.stop();
     return false;
   });
+
   $(".book_topten .m_ico_arrow").on('click', function (e) {
     $('.topten').addClass('list_open');
     $('.recommend_wrap .top_container').addClass('triangle');
@@ -37,18 +37,16 @@ $(function(){
     $(".book_topten .m_ico_arrow").stop().css({'transform': 'rotate(360deg)',"top":"1px"},1000);
     rankSwiper.slideTo(1,0,false);
     rankSwiper.autoplay.start();
-
       return false;
   });
 
-    // 탭 
-    $('.tabs li').on('click', function (e) {
-      e.preventDefault();
-      $('.tabs li').removeClass('on');
-      $(this).addClass('on');
-    });
+  // 탭 
+  $('.tabs li').on('click', function (e) {
+    e.preventDefault();
+    $('.tabs li').removeClass('on');
+    $(this).addClass('on');
+  });
   
-
   // 인기순, 최신순 
   $('.filter-box .order > div').on('click', function (e) {
     e.preventDefault();
@@ -109,7 +107,7 @@ $(function(){
   galleryTopMain.controller.control = galleryThumbsMain;
   galleryThumbsMain.controller.control = galleryTopMain;
 
-//시리즈 슬라이드
+//시리즈 슬라이드 01
   var seriesCont01 = new Swiper(".series_cont_01", {
     slidesPerView: 4, 
     spaceBetween: 20,
@@ -129,7 +127,6 @@ $(function(){
       prevEl: '.sl-nav .swiper-button-prev',
     },
     breakpoints: {
-      // when window width is >= 320px
       1140: {
         slidesPerView: 4,
         slidesPerGroup:4,
@@ -143,10 +140,143 @@ $(function(){
         freeMode: false,
       }
     }
-    
   });
-
-
+//시리즈 슬라이드 02
+var seriesCont02 = new Swiper(".series_cont_02", {
+  slidesPerView: 4, 
+  spaceBetween: 20,
+  loop:false,
+  observer: true,
+  observeParents: true,
+  watchOverflow: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+  preventInteractionOnTransition: true,
+  pagination: {
+    el: '.control .progressbar',
+    type: 'progressbar',
+  },
+  navigation: {
+    nextEl: '.sl-nav .swiper-button-next',
+    prevEl: '.sl-nav .swiper-button-prev',
+  },
+  breakpoints: {
+    1140: {
+      slidesPerView: 4,
+      slidesPerGroup:4,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: "auto",
+      spaceBetween: 18,
+      touchRatio: 0.3,
+      slideToClickedSlide: true,
+      freeMode: false,
+    }
+  }
+});
+ //시리즈 슬라이드 03
+var seriesCont03 = new Swiper(".series_cont_03", {
+  slidesPerView: 4, 
+  spaceBetween: 20,
+  loop:false,
+  observer: true,
+  observeParents: true,
+  watchOverflow: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+  preventInteractionOnTransition: true,
+  pagination: {
+    el: '.control .progressbar',
+    type: 'progressbar',
+  },
+  navigation: {
+    nextEl: '.sl-nav .swiper-button-next',
+    prevEl: '.sl-nav .swiper-button-prev',
+  },
+  breakpoints: {
+    1140: {
+      slidesPerView: 4,
+      slidesPerGroup:4,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: "auto",
+      spaceBetween: 18,
+      touchRatio: 0.3,
+      slideToClickedSlide: true,
+      freeMode: false,
+    }
+  }
+}); 
+//시리즈 슬라이드 04
+var seriesCont04 = new Swiper(".series_cont_04", {
+  slidesPerView: 4, 
+  spaceBetween: 20,
+  loop:false,
+  observer: true,
+  observeParents: true,
+  watchOverflow: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+  preventInteractionOnTransition: true,
+  pagination: {
+    el: '.control .progressbar',
+    type: 'progressbar',
+  },
+  navigation: {
+    nextEl: '.sl-nav .swiper-button-next',
+    prevEl: '.sl-nav .swiper-button-prev',
+  },
+  breakpoints: {
+    1140: {
+      slidesPerView: 4,
+      slidesPerGroup:4,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: "auto",
+      spaceBetween: 18,
+      touchRatio: 0.3,
+      slideToClickedSlide: true,
+      freeMode: false,
+    }
+  }
+});
+//시리즈 슬라이드 05
+var seriesCont05 = new Swiper(".series_cont_05", {
+  slidesPerView: 4, 
+  spaceBetween: 20,
+  loop:false,
+  observer: true,
+  observeParents: true,
+  watchOverflow: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+  preventInteractionOnTransition: true,
+  pagination: {
+    el: '.control .progressbar',
+    type: 'progressbar',
+  },
+  navigation: {
+    nextEl: '.sl-nav .swiper-button-next',
+    prevEl: '.sl-nav .swiper-button-prev',
+  },
+  breakpoints: {
+    1140: {
+      slidesPerView: 4,
+      slidesPerGroup:4,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: "auto",
+      spaceBetween: 18,
+      touchRatio: 0.3,
+      slideToClickedSlide: true,
+      freeMode: false,
+    }
+  }
+});
   
   // seriesBookCont.on('reachEnd', function() {
   //   $('.series_slide_wrap .series_book_cont').css("padding-left","10px");
@@ -168,7 +298,5 @@ $(function(){
     $('.modal').removeClass('modal-opened');
     $(body).removeClass('bodyscroll');
   });
-
-
 
 });

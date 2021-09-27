@@ -128,7 +128,7 @@ button.fl_btn .ico_view::after {
 }
 .main-slide-con .summary {
   flex-grow: 1;
-  flex-basis: 0; 
+  flex-basis: 0;
   margin-left: 38px;
 }
 .main-slide-con .summary_title {
@@ -594,19 +594,19 @@ button.fl_btn .ico_view::after {
     no-repeat;
 }
 .tab_wrap ul li.on a.all_category {
-  background: url("../images/funreading/icon/category/all_ico.png") bottom center
-    no-repeat;
-    color: #f57d24;
+  background: url("../images/funreading/icon/category/all_ico.png") bottom
+    center no-repeat;
+  color: #f57d24;
   background-position-y: -102px;
 }
 .tab_wrap ul li a.series_category {
-  background: url("../images/funreading/icon/category/series_ico.png") top center
-    no-repeat;
+  background: url("../images/funreading/icon/category/series_ico.png") top
+    center no-repeat;
 }
 .tab_wrap ul li.on a.series_category {
-  background: url("../images/funreading/icon/category/series_ico.png") bottom center
-    no-repeat;
-    color: #f57d24;
+  background: url("../images/funreading/icon/category/series_ico.png") bottom
+    center no-repeat;
+  color: #f57d24;
   background-position-y: -102px;
 }
 .tab_wrap ul li a.novel_category {
@@ -614,42 +614,41 @@ button.fl_btn .ico_view::after {
     no-repeat;
 }
 .tab_wrap ul li.on a.novel_category {
-  background: url("../images/funreading/icon/category/novel_ico.png") bottom center
-    no-repeat;
-    color: #f57d24;
+  background: url("../images/funreading/icon/category/novel_ico.png") bottom
+    center no-repeat;
+  color: #f57d24;
   background-position-y: -102px;
 }
 .tab_wrap ul li a.nonfiction_category {
-  background: url("../images/funreading/icon/category/nonfiction_ico.png") top center
-    no-repeat;
+  background: url("../images/funreading/icon/category/nonfiction_ico.png") top
+    center no-repeat;
 }
 .tab_wrap ul li.on a.nonfiction_category {
-  background: url("../images/funreading/icon/category/nonfiction_ico.png") bottom center
-    no-repeat;
-    color: #f57d24;
+  background: url("../images/funreading/icon/category/nonfiction_ico.png")
+    bottom center no-repeat;
+  color: #f57d24;
   background-position-y: -102px;
 }
 .tab_wrap ul li a.phoenix_category {
-  background: url("../images/funreading/icon/category/phoenix_ico.png") top center
-    no-repeat;
+  background: url("../images/funreading/icon/category/phoenix_ico.png") top
+    center no-repeat;
 }
 .tab_wrap ul li.on a.phoenix_category {
-  background: url("../images/funreading/icon/category/phoenix_ico.png") bottom center
-    no-repeat;
-    color: #f57d24;
+  background: url("../images/funreading/icon/category/phoenix_ico.png") bottom
+    center no-repeat;
+  color: #f57d24;
   background-position-y: -102px;
 }
 .tab_wrap ul li a.cartoon_category {
-  background: url("../images/funreading/icon/category/cartoon_ico.png") top center
-    no-repeat;
+  background: url("../images/funreading/icon/category/cartoon_ico.png") top
+    center no-repeat;
 }
 .tab_wrap ul li.on a.cartoon_category {
-  background: url("../images/funreading/icon/category/cartoon_ico.png") bottom center
-    no-repeat;
-    color: #f57d24;
+  background: url("../images/funreading/icon/category/cartoon_ico.png") bottom
+    center no-repeat;
+  color: #f57d24;
   background-position-y: -102px;
 }
-
 
 .tab_wrap ul li span {
   position: relative;
@@ -789,10 +788,10 @@ body.sub .filter-box .filter .order > div.on:before {
   display: flex;
   margin-right: 50px;
 }
-.series_slide_wrap .series_book_cont {
+.series_slide_wrap .swiper-container {
   max-width: 560px;
 }
-.series_slide_wrap .series_book_cont .swiper-wrapper {
+.series_slide_wrap .swiper-container .swiper-wrapper {
   -ms-flex-align: baseline;
   align-items: baseline;
   display: -ms-inline-flexbox;
@@ -850,7 +849,7 @@ body.sub .filter-box .filter .order > div.on:before {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px auto;
+  margin: 20px auto 100px;
   cursor: pointer;
   background: #fff;
   border: 1px solid #7e7e7e;
@@ -917,7 +916,7 @@ body.sub .filter-box .filter .order > div.on:before {
   font-size: 16px;
   font-weight: 400;
   line-height: 24px;
-  letter-spacing:-0.8px;
+  letter-spacing: -0.8px;
   margin-top: 25px;
   color: #222;
   word-wrap: break-word;
@@ -938,7 +937,6 @@ body.sub .filter-box .filter .order > div.on:before {
   margin-top: 80px;
   color: #7e7e7e;
   line-height: 1.33;
-
 }
 .series_info_thumbs .series_btn a::after {
   display: inline-block;
@@ -978,27 +976,27 @@ body.sub .filter-box .filter .order > div.on:before {
   background-image: url(../images/funreading/icon/on_bookshelf_ico.png);
 }
 
-.series_book_cont .swiper-wrapper .swiper-slide img {
+.swiper-container .swiper-wrapper .swiper-slide img {
   max-width: 125px;
   width: 100%;
   border-radius: 5px;
 }
 
-.series_book_cont .swiper-slide .books {
+.swiper-container .swiper-slide .books {
   /* position: relative; min-height: 180px; */
 }
-.series_book_cont .swiper-slide .books::after {
+.swiper-container .swiper-slide .books::after {
   content: "";
   clear: both;
   display: block;
   display: -webkit-box;
 }
-.series_book_cont .swiper-slide .books > div {
+.swiper-container .swiper-slide .books > div {
   /* width: inherit; position: absolute; bottom: 0; overflow: hidden; max-height: 100%; background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%); border-radius: 0 4px 4px 0; box-shadow: 2px 2px 6px rgb(0 0 0 / 10%), 0 0 2px rgb(0 0 0 / 20%); */
 }
 /* .sl-box .book-sl .swiper-slide .books { width: 100%; min-height: 332px; position: relative; } */
 /* .sl-box .book-sl .swiper-slide .books > div { position: absolute; left: 0; bottom: 0; display: inline-block; width:100%; } */
-.series_book_cont .swiper-slide .book-info h3 {
+.swiper-container .swiper-slide .book-info h3 {
   font-size: 15px;
   font-weight: 400;
   text-align: center;
@@ -1007,11 +1005,11 @@ body.sub .filter-box .filter .order > div.on:before {
   margin-top: 18px;
   color: #333;
 }
-.series_book_cont .swiper-slide .book-info .desc,
-.series_book_cont .swiper-slide .book-info .cont {
+.swiper-container .swiper-slide .book-info .desc,
+.swiper-container .swiper-slide .book-info .cont {
   display: none;
 }
-.series_book_cont .swiper-slide-active .books > div {
+.swiper-container .swiper-slide-active .books > div {
   /*width: 100%; */
 }
 
@@ -1047,12 +1045,12 @@ body.sub .filter-box .filter .order > div.on:before {
 .series_book_slider .control .swiper-button-prev.swiper-button-disabled:before {
   background: url(https://www.ebse.co.kr/images/main/body_slide_left.png)
     no-repeat right top;
-    background-size: cover;
+  background-size: cover;
 }
 .series_book_slider .control .swiper-button-next.swiper-button-disabled:before {
   background: url(https://www.ebse.co.kr/images/main/body_slide_right.png)
     no-repeat right top;
-    background-size: cover;
+  background-size: cover;
 }
 .series_book_slider .control .swiper-button-next:before {
   display: inline-block;
@@ -1071,10 +1069,11 @@ body.sub .filter-box .filter .order > div.on:before {
 }
 .series_book_slider .control {
   z-index: 10;
-  position: absolute;
+  position: relative;
+  width: 100%;
+  height: 70px;
   left: auto;
-  bottom: -2px;
-  width: 50%;
+  top: 20px;
   background: transparent;
   cursor: pointer;
   outline: none;
@@ -1091,11 +1090,11 @@ body.sub .filter-box .filter .order > div.on:before {
 }
 
 .series_book_slider .control .progressbar {
-  width: calc(100% - 110px);
+  width: calc(100% - 101px);
   height: 2px;
   background: rgba(0, 0, 0, 0.1);
   position: relative;
-  margin-right: 23px;
+  margin-right: 25px;
 }
 .series_book_slider .control .progressbar .swiper-pagination-progressbar-fill {
   background: #000;
@@ -1457,10 +1456,10 @@ Media Queries for Responsive Design.
     margin: 0 auto;
     padding: 8px 20px 0;
   }
-  .series_slide_wrap .series_book_cont {
+  .series_slide_wrap .swiper-container {
     max-width: 100%;
   }
-  .series_slide_wrap .series_book_cont .swiper-wrapper {
+  .series_slide_wrap .swiper-container .swiper-wrapper {
     -ms-flex-align: baseline;
     align-items: baseline;
     display: -ms-inline-flexbox;
@@ -1478,7 +1477,7 @@ Media Queries for Responsive Design.
     max-width: 100%;
     width: 100%;
   }
-  .series_book_cont .swiper-wrapper .swiper-slide img {
+  .swiper-container .swiper-wrapper .swiper-slide img {
     width: inherit;
     max-width: 100%;
     min-height: 80px;
@@ -1489,14 +1488,7 @@ Media Queries for Responsive Design.
   .series_book_slider {
     width: 100%;
     max-width: 100%;
-    padding: 50px 20px 120px 20px;
-  }
-  .series_book_slider .control {
-    left: auto;
-    right: auto;
-    bottom: -20px;
-    width: 97%;
-    height: 100px;
+    padding: 50px 20px 0 20px;
   }
   .series_book_slider .control .count {
     display: block;
@@ -1781,7 +1773,7 @@ Media Queries for Responsive Design.
     height: 5px;
     content: "";
     margin-top: -3.5px;
-}
+  }
   .tab_wrap {
     display: flex;
     display: -webkit-box;
@@ -1823,7 +1815,7 @@ Media Queries for Responsive Design.
   }
   .tab_wrap ul li a {
     background-size: 30px !important;
-} 
+  }
   .tab_wrap ul li.on a {
     background-position-y: -81px !important;
   }
@@ -2063,12 +2055,12 @@ Media Queries for Responsive Design.
     letter-spacing: -0.325px;
     width: 110px;
     height: 30px;
-}
-.series_more_btn::after {
-  width: 6px;
-  height: 6px;
-  margin-top: -3px;
-}
+  }
+  .series_more_btn::after {
+    width: 6px;
+    height: 6px;
+    margin-top: -3px;
+  }
   .book_count,
   .series_btn,
   .control .sl-nav {
@@ -2076,7 +2068,7 @@ Media Queries for Responsive Design.
   }
 
   /* series slider */
-  .series_slide_wrap .series_book_cont {
+  .series_slide_wrap .swiper-container {
     max-width: 100%;
     overflow: visible;
     margin-left: 0;
@@ -2084,7 +2076,7 @@ Media Queries for Responsive Design.
     padding-bottom: 0;
     padding-top: 0;
   }
-  .series_slide_wrap .series_book_cont .swiper-wrapper {
+  .series_slide_wrap .swiper-container .swiper-wrapper {
     -ms-flex-align: baseline;
     align-items: baseline;
     display: -ms-inline-flexbox;
@@ -2102,7 +2094,7 @@ Media Queries for Responsive Design.
     max-width: 100%;
     width: 100%;
   }
-  .series_book_cont .swiper-wrapper .swiper-slide img {
+  .swiper-container .swiper-wrapper .swiper-slide img {
     width: inherit;
     max-width: 100%;
     min-height: auto;
@@ -2111,14 +2103,12 @@ Media Queries for Responsive Design.
     max-width: -moz-max-content;
   }
   .series_book_slider {
-    width: 100%;
-    max-width: 100%;
-    padding: 13px 17px 74px;
+    padding: 13px 17px 40px;
   }
   .series_book_slider .control {
     left: 17px;
     right: 0;
-    bottom: 5px;
+    top: 30px;
     height: 30px;
   }
 
@@ -2147,7 +2137,12 @@ Media Queries for Responsive Design.
     height: 18px;
   }
 
-  .slide_seciton_02,.slide_seciton_03,.slide_seciton_04,.slide_seciton_05 {margin-top: 65px;}
+  .slide_seciton_02,
+  .slide_seciton_03,
+  .slide_seciton_04,
+  .slide_seciton_05 {
+    margin-top: 65px;
+  }
 
   /* 모달 컨텐츠 */
   .modal_body {
@@ -2164,8 +2159,8 @@ Media Queries for Responsive Design.
     width: 158px;
   }
   .main-slide-con .summary_description .level:before {
-    top: .5px;
-  }  
+    top: 0.5px;
+  }
 }
 @media only screen and (max-width: 375px) {
   .main-slide-con .summary_description .book_tit > a {
@@ -2178,5 +2173,5 @@ Media Queries for Responsive Design.
     display: block;
     display: -webkit-box;
     max-width: 100%;
-  } 
+  }
 }

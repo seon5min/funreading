@@ -698,7 +698,7 @@ button.fl_btn .ico_view::after {
   margin-bottom: 40px;
 }
 .category_wrap .title_container .title {
-  width: 50%;
+  width: 70%;
 }
 .category_wrap .title_container .title p.main_tit {
   font-weight: 700;
@@ -716,7 +716,7 @@ button.fl_btn .ico_view::after {
   letter-spacing: -1.3px;
 }
 .category_wrap .title_container .filter-box {
-  width: 50% !important;
+  width: 30% !important;
 }
 
 body.sub .filter-box .filter .order > div.on .bt {
@@ -1386,6 +1386,14 @@ Media Queries for Responsive Design.
     width: 43vw;
     padding: 10px 0 7px;
   }
+  .title_container,
+  .slide_seciton_01,
+  .slide_seciton_02,
+  .slide_seciton_03,
+  .slide_seciton_04,
+  .slide_seciton_05 {
+    padding: 0 20px;
+  }
 }
 
 @media only screen and (max-width: 980px) {
@@ -1510,11 +1518,19 @@ Media Queries for Responsive Design.
   .container_fluid .fluid_thumb li {
     margin-bottom: 40px;
   }
+  .title_container,
+  .slide_seciton_01,
+  .slide_seciton_02,
+  .slide_seciton_03,
+  .slide_seciton_04,
+  .slide_seciton_05 {
+    padding: 0;
+  }
 }
 
 /* Mobile visuals
 ----------------------------------*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 740px) {
   /* top 10, search */
   .recommend_wrap {
     height: 77px;
@@ -2026,8 +2042,8 @@ Media Queries for Responsive Design.
   .series_info_thumbs .book_thumbnail {
     position: relative;
     margin-right: 17px;
-    max-width: 125px;
-    max-height: 181px;
+    max-width: 45%;
+    max-height: 100%;
     width: 100%;
     height: 100%;
     padding-top: 4px;
@@ -2036,8 +2052,8 @@ Media Queries for Responsive Design.
     margin-top: 0;
   }
   .series_info_thumbs .book_thumbnail img {
-    min-width: 125px;
-    max-height: 181px;
+    min-width: 100%;
+    max-height: 100%;
   }
   .series_info_thumbs .book_info h2 {
     font-size: 15px;
@@ -2098,16 +2114,17 @@ Media Queries for Responsive Design.
   .swiper-container .swiper-wrapper .swiper-slide img {
     width: inherit;
     max-width: 100%;
-    max-height: 150px;
+    /* max-height: 150px; */
     display: block;
     display: -webkit-box;
     max-width: -moz-max-content;
   }
   .series_book_slider {
     padding: 13px 17px 40px;
+    min-height: 100%;
   }
   .series_book_slider .control {
-    left: 17px;
+    left: 0;
     right: 0;
     top: 30px;
     height: 30px;
@@ -2121,8 +2138,8 @@ Media Queries for Responsive Design.
     font-size: 12px;
   }
   .series_book_slider .swiper-slide {
-    /* width: 35% !important; */
-    width: 96px !important;
+    width: 35% !important;
+    /* width: 96px !important; */
     /* margin-right: 20px; */
   }
 

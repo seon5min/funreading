@@ -1,4 +1,6 @@
-@charset "utf-8"; /* common*/
+@charset "utf-8";
+
+/* common*/
 img {
   border: 0;
   max-width: 100%;
@@ -27,7 +29,6 @@ button.fl_btn .ico_view {
   line-height: 47px;
   letter-spacing: -0.5px;
 }
-
 button.fl_btn .ico_view::after {
   position: absolute;
   top: 0px;
@@ -36,13 +37,12 @@ button.fl_btn .ico_view::after {
   display: block;
   width: 22px;
   height: 22px;
-  background: url(../images/funreading/icon/today_ico.png) no-repeat 0 0;
+  background: url("../images/funreading/icon/today_ico.png") no-repeat 0 0;
 }
 
 /* ==========================================================================
  LAYOUT
 ========================================================================== */
-/* 메인 비쥬얼 슬라이드 */
 .main_banner_wrap {
   position: relative;
   margin: 0 auto;
@@ -103,7 +103,8 @@ button.fl_btn .ico_view::after {
   clear: both;
   width: 300px;
   height: 190px;
-  background: url(../images/funreading/banner/funpick_img.png) 65% top no-repeat;
+  background: url("../images/funreading/banner/funpick_img.png") 65% top
+    no-repeat;
   z-index: 1;
 }
 .main-slide-con > .photo {
@@ -147,7 +148,7 @@ button.fl_btn .ico_view::after {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-height: 4em; /* 두 줄 */
+  max-height: 4em;
 }
 .main-slide-con .summary_title .series_tit a {
   position: relative;
@@ -161,7 +162,7 @@ button.fl_btn .ico_view::after {
   line-height: 1.4;
   z-index: -1;
   width: 102%;
-  height: 1px; /* border-radius: 1rem; */
+  height: 1px;
   background-color: #222;
 }
 .main-slide-con .summary_title .series_subtit {
@@ -272,7 +273,6 @@ button.fl_btn .ico_view::after {
   border: 5px solid #ff9154;
   background-color: #ff9154;
 }
-
 .main_banner_wrap .gallery_thumbs .swiper-slide-thumb-active {
   -webkit-transition: all 0.35s linear;
   -moz-transition: all 0.35s linear;
@@ -297,7 +297,6 @@ button.fl_btn .ico_view::after {
   -o-transform: translateY(-10px);
   transform: translateY(-10px);
 }
-
 .thumbs_con:before {
   content: "";
   display: block;
@@ -312,7 +311,7 @@ button.fl_btn .ico_view::after {
   z-index: 1;
 }
 
-/* 이번주 인기 도서 , 도서 찾기 */
+/* ranking, search */
 .recommend_wrap {
   width: 100%;
   height: 170px;
@@ -446,7 +445,6 @@ button.fl_btn .ico_view::after {
   -moz-box-shadow: 7px 7px 30px rgba(0, 0, 0, 0.08);
   box-shadow: 7px 7px 30px rgba(0, 0, 0, 0.08);
 }
-
 .book_topten .swiper-container.topten.list_open .swiper-wrapper {
   overflow: hidden;
   height: 368px;
@@ -554,6 +552,9 @@ button.fl_btn .ico_view::after {
  category TAB
  ========================================================================== */
 .tab_wrap {
+  display: block;
+  width: 100%;
+  max-width: 980px;
   margin: -70px auto 20px;
   background-color: #fff;
   border-radius: 5px;
@@ -561,14 +562,11 @@ button.fl_btn .ico_view::after {
   -moz-box-shadow: 7px 7px 40px rgba(0, 0, 0, 0.08);
   box-shadow: 7px 7px 40px rgba(0, 0, 0, 0.08);
 }
-
-/* 1depth 탭메뉴 디자인 IE10이상*/
 .tab_wrap ul {
   display: -ms-flexbox;
   display: flex;
   padding: 30px 45px;
 }
-
 .tab_wrap ul li {
   -ms-flex-align: center;
   align-items: center;
@@ -577,7 +575,6 @@ button.fl_btn .ico_view::after {
   -ms-flex: 1;
   flex: 1;
 }
-
 .tab_wrap ul li a {
   width: 60px;
   -ms-flex-align: center;
@@ -589,7 +586,6 @@ button.fl_btn .ico_view::after {
   vertical-align: top;
   color: #464646;
 }
-
 .tab_wrap ul li a.all_category {
   background: url("../images/funreading/icon/category/all_ico.png") top center
     no-repeat;
@@ -650,7 +646,6 @@ button.fl_btn .ico_view::after {
   color: #f57d24;
   background-position-y: -102px;
 }
-
 .tab_wrap ul li span {
   position: relative;
   z-index: 1;
@@ -670,21 +665,8 @@ button.fl_btn .ico_view::after {
   border-radius: 1rem;
   background-color: #f57d24;
 }
-/*
- IE9이상
- .tabs.type1:after { content:""; display:block; clear:both; } 
- .tabs.type1 li { float:left; width:25%; border: 1px solid grey; box-sizing:border-box; } 
- */
 
-/* 탭 콘텐츠 열고 닫힘설정 
-.tab_con {
-  display: none;
-}
-.tab_con.on {
-  display: block;
-}*/
-
-/* category TAB - Series 시리즈 */
+/* Series 시리즈 */
 .category_wrap {
   margin: 93px auto 100px;
   width: 100%;
@@ -718,7 +700,6 @@ button.fl_btn .ico_view::after {
 .category_wrap .title_container .filter-box {
   width: 30% !important;
 }
-
 body.sub .filter-box .filter .order > div.on .bt {
   color: #ff6600;
   border-color: #ff6600;
@@ -739,7 +720,7 @@ body.sub .filter-box .filter .order > div.on:before {
   background: #fff;
   height: 100%;
   max-width: 600px;
-  margin: auto; /* Center slide text vertically */
+  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -753,7 +734,6 @@ body.sub .filter-box .filter .order > div.on:before {
   -webkit-align-items: center;
   align-items: center;
 }
-
 .category_wrap .slide_container .gallery-top-cont {
   height: 80%;
   width: 100%;
@@ -783,6 +763,7 @@ body.sub .filter-box .filter .order > div.on:before {
 }
 .series_slide_wrap .series_info_thumbs {
   max-width: 580px;
+  min-width: 530px;
   overflow: hidden;
   padding-top: 8px;
   display: -webkit-flex;
@@ -845,41 +826,6 @@ body.sub .filter-box .filter .order > div.on:before {
   margin-bottom: 5px;
 }
 
-/* 전체보기 */
-.series_more_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px auto 100px;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #7e7e7e;
-  font-size: 16px;
-  line-height: 18px;
-  letter-spacing: -0.5px;
-  color: #7e7e7e;
-  text-align: center;
-  top: 3px;
-  right: 0;
-  width: 140px;
-  height: 40px;
-}
-.series_more_btn::after {
-  width: 9px;
-  height: 9px;
-  content: "";
-  margin-top: -3px;
-  margin-left: 10px;
-  vertical-align: middle;
-  border-top: 1px solid #7e7e7e;
-  border-left: 1px solid #7e7e7e;
-  -webkit-transform: rotate(-135deg);
-  -moz-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-}
-
 /* LEFT 썸네일 */
 .series_info_thumbs .book_thumbnail {
   position: relative;
@@ -901,7 +847,11 @@ body.sub .filter-box .filter .order > div.on:before {
   height: 100%;
   border-radius: 4px;
 }
-
+.series_info_thumbs .book_info {
+  max-width: 280px;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
 .series_info_thumbs .book_info h2 {
   font-size: 28px;
   font-weight: 500;
@@ -910,15 +860,18 @@ body.sub .filter-box .filter .order > div.on:before {
   line-height: 40px;
   margin-top: 2px;
   color: #222;
+  max-width: 280px;
+  height: 8rem;
   word-wrap: break-word;
   word-break: keep-all;
 }
 .series_info_thumbs .book_info .book_txt {
   font-size: 16px;
+  height: 3rem;
   font-weight: 400;
   line-height: 24px;
   letter-spacing: -0.8px;
-  margin-top: 25px;
+  margin-top: 10px;
   color: #222;
   word-wrap: break-word;
   word-break: keep-all;
@@ -955,7 +908,6 @@ body.sub .filter-box .filter .order > div.on:before {
   -o-transform: rotate(-45deg);
   transform: rotate(45deg);
 }
-
 .series_info_thumbs .book_thumbnail .ico.add {
   display: block;
   display: -webkit-box;
@@ -976,15 +928,14 @@ body.sub .filter-box .filter .order > div.on:before {
 .series_info_thumbs .book_thumbnail .ico.add.on {
   background-image: url(../images/funreading/icon/on_bookshelf_ico.png);
 }
-
-.swiper-container .swiper-wrapper .swiper-slide img {
+.main_banner_wrap .swiper-slide img {
+  max-width: 240px;
+  width: 100%;
+}
+.series_book_slider .swiper-slide img {
   max-width: 125px;
   width: 100%;
   border-radius: 5px;
-}
-
-.swiper-container .swiper-slide .books {
-  /* position: relative; min-height: 180px; */
 }
 .swiper-container .swiper-slide .books::after {
   content: "";
@@ -992,11 +943,6 @@ body.sub .filter-box .filter .order > div.on:before {
   display: block;
   display: -webkit-box;
 }
-.swiper-container .swiper-slide .books > div {
-  /* width: inherit; position: absolute; bottom: 0; overflow: hidden; max-height: 100%; background: linear-gradient(90deg, #f2f2f2 25%, #e6e6e6 37%, #f2f2f2 63%); border-radius: 0 4px 4px 0; box-shadow: 2px 2px 6px rgb(0 0 0 / 10%), 0 0 2px rgb(0 0 0 / 20%); */
-}
-/* .sl-box .book-sl .swiper-slide .books { width: 100%; min-height: 332px; position: relative; } */
-/* .sl-box .book-sl .swiper-slide .books > div { position: absolute; left: 0; bottom: 0; display: inline-block; width:100%; } */
 .swiper-container .swiper-slide .book-info h3 {
   font-size: 15px;
   font-weight: 400;
@@ -1009,9 +955,6 @@ body.sub .filter-box .filter .order > div.on:before {
 .swiper-container .swiper-slide .book-info .desc,
 .swiper-container .swiper-slide .book-info .cont {
   display: none;
-}
-.swiper-container .swiper-slide-active .books > div {
-  /*width: 100%; */
 }
 
 /* control */
@@ -1064,7 +1007,6 @@ body.sub .filter-box .filter .order > div.on:before {
   background-size: cover;
   content: "";
 }
-
 .series_book_slider .control .progressbar {
   line-height: 45px;
 }
@@ -1089,7 +1031,6 @@ body.sub .filter-box .filter .order > div.on:before {
   position: relative;
   right: 0;
 }
-
 .series_book_slider .control .progressbar {
   width: calc(100% - 101px);
   height: 2px;
@@ -1103,6 +1044,42 @@ body.sub .filter-box .filter .order > div.on:before {
 .series_book_slider .book-sl .swiper-slide .books img {
   max-width: 100%;
 }
+
+/* 전체보기 */
+.series_more_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 100px;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #7e7e7e;
+  font-size: 16px;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  color: #7e7e7e;
+  text-align: center;
+  top: 3px;
+  right: 0;
+  width: 140px;
+  height: 40px;
+}
+.series_more_btn::after {
+  width: 9px;
+  height: 9px;
+  content: "";
+  margin-top: -3px;
+  margin-left: 10px;
+  vertical-align: middle;
+  border-top: 1px solid #7e7e7e;
+  border-left: 1px solid #7e7e7e;
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
 /* modal */
 .modal.modal-opened {
   opacity: 1;
@@ -1184,7 +1161,8 @@ body.sub .filter-box .filter .order > div.on:before {
   overflow: hidden;
   touch-action: none;
 }
-/* 모달 컨텐츠 */
+
+/* modal 컨텐츠 */
 .container_fluid {
   -ms-flex-align: baseline;
   align-items: baseline;
@@ -1240,6 +1218,7 @@ body.sub .filter-box .filter .order > div.on:before {
   border-radius: 20px;
   margin-bottom: 5px;
 }
+
 /* ==========================================================================
 Media Queries for Responsive Design.
 ========================================================================== */
@@ -1262,7 +1241,6 @@ Media Queries for Responsive Design.
     max-width: 360px;
     min-width: 70%;
   }
-
   .main-slide-con .summary_title .series_subtit {
     font-size: 18px;
     max-width: 360px;
@@ -1312,7 +1290,6 @@ Media Queries for Responsive Design.
   .main_banner_wrap .gallery_thumbs .swiper-slide > span {
     height: 9vw;
   }
-
   .main_banner_wrap .gallery_thumbs .swiper-slide.swiper-slide-active img {
     border: 3px solid #ff9154;
   }
@@ -1326,7 +1303,6 @@ Media Queries for Responsive Design.
     left: 210px;
     padding-top: 0;
   }
-
   .main-slide-con::after {
     position: absolute;
     right: -47.5%;
@@ -1354,9 +1330,12 @@ Media Queries for Responsive Design.
   }
   .thumbs_con:before {
     bottom: 65px;
-    background: url(../images/funreading/banner/funpick_img.png) 55% top
+    background: url("../images/funreading/banner/funpick_img.png") 80% 10%
       no-repeat;
     background-size: 10vw;
+  }
+  .main-slide-con .summary {
+    margin-left: 20px;
   }
   .main-slide-con > .photo {
     max-width: 240px;
@@ -1378,9 +1357,6 @@ Media Queries for Responsive Design.
   .tab_wrap {
     border-radius: 0;
   }
-}
-
-@media only screen and (max-width: 1139px) {
   .main_banner_wrap .gallery_thumbs {
     max-width: 43vw;
     width: 43vw;
@@ -1398,21 +1374,10 @@ Media Queries for Responsive Design.
 
 @media only screen and (max-width: 980px) {
   .main_banner_wrap .gallery_thumbs {
-    max-width: 43vw;
-    width: 43vw;
     padding: 15px 0;
   }
   .main-slide-con::after {
     height: 120px;
-  }
-  .main_banner_wrap .gallery_thumbs .swiper-slide > span > img {
-    /* max-width: 50px; */
-  }
-  .thumbs_con:before {
-    bottom: 58px;
-    background: url(../images/funreading/banner/funpick_img.png) 70% top
-      no-repeat;
-    background-size: 11vw;
   }
   .book_search > p {
     display: none;
@@ -1457,7 +1422,6 @@ Media Queries for Responsive Design.
     flex-direction: column;
     width: 100%;
   }
-
   .series_slide_wrap .series_info_thumbs {
     max-width: 1140px;
     width: 100%;
@@ -1486,7 +1450,11 @@ Media Queries for Responsive Design.
     max-width: 100%;
     width: 100%;
   }
-  .swiper-container .swiper-wrapper .swiper-slide img {
+  .main_banner_wrap .swiper-slide img {
+    max-width: 125px;
+    width: 100%;
+  }
+  .series_book_slider .swiper-slide img {
     width: inherit;
     max-width: 100%;
     min-height: 80px;
@@ -1510,6 +1478,7 @@ Media Queries for Responsive Design.
     top: 5px;
     color: #7e7e7e;
   }
+
   /* 모달 컨텐츠 */
   .container_fluid .fluid_thumb li {
     width: calc(33.3% - 0.5%);
@@ -1559,7 +1528,6 @@ Media Queries for Responsive Design.
     font-size: 14px;
     margin-right: 0;
   }
-
   .book_topten .m_ico_arrow {
     display: block;
     position: absolute;
@@ -1601,7 +1569,6 @@ Media Queries for Responsive Design.
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg);
   }
-
   .book_topten .m_ico_arrow::before {
     display: inline-block;
     width: 7px;
@@ -1639,11 +1606,6 @@ Media Queries for Responsive Design.
   .book_topten .swiper-container.topten.list_open .swiper-wrapper {
     height: 390px;
   }
-
-  /* .book_topten .topten.list_open .swiper-slide.swiper-slide-duplicate {
-      display: none;
-    }   */
-
   .book_search .search_bar {
     width: auto;
     height: 41px;
@@ -1668,12 +1630,11 @@ Media Queries for Responsive Design.
   .tab_wrap {
     margin: 0 auto 20px;
   }
-
   .main_banner_wrap .swiper-container {
     height: 423px;
   }
   .main_banner_wrap .gallery_top .swiper-slide {
-    background: url(../images/funreading/banner/m_banner_01.jpg) no-repeat
+    background: url("../images/funreading/banner/m_banner_01.jpg") no-repeat
       bottom left;
     background-size: cover;
     height: initial;
@@ -1695,7 +1656,6 @@ Media Queries for Responsive Design.
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    /* height: 260px; */
     margin-bottom: 42px;
   }
   .main-slide-con .summary_title {
@@ -1743,7 +1703,6 @@ Media Queries for Responsive Design.
     font-weight: 500;
     white-space: normal;
   }
-
   .main-slide-con .summary_description .book_tit {
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -1805,11 +1764,9 @@ Media Queries for Responsive Design.
   .tab_wrap::-webkit-scrollbar {
     display: none;
   }
-
   .tab_wrap.inner {
     padding: 0px !important;
   }
-
   .tab_wrap .tabs {
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
@@ -1823,7 +1780,6 @@ Media Queries for Responsive Design.
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
   }
-
   .tab_wrap ul li {
     padding: 18px;
     width: 120px;
@@ -1895,13 +1851,11 @@ Media Queries for Responsive Design.
     color: #232323;
     white-space: normal;
   }
-
   .main-slide-con > .text > li.title > h4.eng_tit {
     font-size: 28px;
     font-weight: 600;
     max-width: 100%;
   }
-
   .main-slide-con > .text .sub_info {
     display: -ms-flexbox;
     display: flex;
@@ -1921,7 +1875,7 @@ Media Queries for Responsive Design.
   }
   .main-slide-con > .text p.step {
     font-size: 22px;
-    line-height: 1.6; /* padding-left: 30px; */
+    line-height: 1.6;
   }
   .main-slide-con .text li.more_btn {
     margin-top: 32px;
@@ -1977,7 +1931,6 @@ Media Queries for Responsive Design.
     height: 10px;
     margin: 0 5px;
   }
-  /* .main_banner_wrap ul.slick-dots span:not(.swiper-pagination-bullet-active) { top: 1px; } */
   .main_banner_wrap .slick-dots span.swiper-pagination-bullet-active {
     opacity: 1;
     background: #222;
@@ -2031,7 +1984,6 @@ Media Queries for Responsive Design.
     flex-direction: column;
     width: 100%;
   }
-
   .series_slide_wrap .series_info_thumbs {
     max-width: 1140px;
     width: 100%;
@@ -2040,13 +1992,8 @@ Media Queries for Responsive Design.
     padding: 0 17px;
   }
   .series_info_thumbs .book_thumbnail {
-    position: relative;
     margin-right: 17px;
-    max-width: 45%;
-    max-height: 100%;
-    width: 100%;
-    height: 100%;
-    padding-top: 4px;
+    padding-top: 5px;
   }
   .series_info_thumbs .book_thumbnail .ico.add {
     margin-top: 0;
@@ -2056,12 +2003,13 @@ Media Queries for Responsive Design.
     max-height: 100%;
   }
   .series_info_thumbs .book_info h2 {
-    font-size: 15px;
+    font-size: 19px;
     line-height: 1.4;
     margin-top: 10px;
+    height: 5.2rem;
   }
   .series_info_thumbs .book_info .book_txt {
-    font-size: 13px;
+    font-size: 17px;
     line-height: 1.4;
     margin-top: 10px;
   }
@@ -2114,7 +2062,6 @@ Media Queries for Responsive Design.
   .swiper-container .swiper-wrapper .swiper-slide img {
     width: inherit;
     max-width: 100%;
-    /* max-height: 150px; */
     display: block;
     display: -webkit-box;
     max-width: -moz-max-content;
@@ -2139,10 +2086,7 @@ Media Queries for Responsive Design.
   }
   .series_book_slider .swiper-slide {
     width: 35% !important;
-    /* width: 96px !important; */
-    /* margin-right: 20px; */
   }
-
   .series_slide_wrap .thumb_book {
     font-size: 13px;
     line-height: 1.5;
@@ -2154,7 +2098,6 @@ Media Queries for Responsive Design.
     width: 34px;
     height: 18px;
   }
-
   .slide_seciton_02,
   .slide_seciton_03,
   .slide_seciton_04,
@@ -2171,6 +2114,12 @@ Media Queries for Responsive Design.
     padding: 0 10px;
   }
 }
+@media only screen and (max-width: 600px) {
+  .series_info_thumbs .book_thumbnail {
+    min-width: 40%;
+    max-width: 125px;
+  }
+}
 
 @media only screen and (max-width: 400px) {
   .book_search .search_bar > input {
@@ -2178,6 +2127,12 @@ Media Queries for Responsive Design.
   }
   .main-slide-con .summary_description .level:before {
     top: 0.5px;
+  }
+  .series_info_thumbs .book_info h2 {
+    font-size: 15px;
+  }
+  .series_info_thumbs .book_info .book_txt {
+    font-size: 13px;
   }
 }
 @media only screen and (max-width: 375px) {

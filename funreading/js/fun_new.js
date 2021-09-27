@@ -54,12 +54,11 @@ $(function(){
     $(this).addClass('on');
   });
 
-    //서재담기
-    $('.book_thumbnail .ico.add').on('click', function (e) {
-      e.preventDefault();
-      $('.book_thumbnail .ico.add').removeClass('on');
-      $(this).addClass('on');
-    });
+  //서재담기
+  $('.book_thumbnail .ico.add').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('on');
+  });
 
   //Swiper JS - MAIN SLIDER
   var galleryThumbsMain = new Swiper('.gallery_thumbs', {
@@ -277,21 +276,14 @@ var seriesCont05 = new Swiper(".series_cont_05", {
     }
   }
 });
-  
-  // seriesBookCont.on('reachEnd', function() {
-  //   $('.series_slide_wrap .series_book_cont').css("padding-left","10px");
-  // });
 
-  // var numOfSlides = document.querySelectorAll(".series_slide_wrap .swiper-slide").length;
-  // console.log("numOfSlides: " + numOfSlides);
-  // $(".count .total").html(numOfSlides);
-
-    //modal 
+  //modal 
   $('.series_more_btn').on('click', function (e) {
     e.preventDefault();
     $('.modal').addClass('modal-opened');
     $('body').addClass('bodyscroll');
   });
+
   $('.btn-modal-close').on('click', function (e) {
     var body = document.body;
     e.preventDefault();

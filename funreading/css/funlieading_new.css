@@ -2116,8 +2116,14 @@ Media Queries for Responsive Design.
 }
 @media only screen and (max-width: 600px) {
   .series_info_thumbs .book_thumbnail {
-    min-width: 40%;
+    min-width: 33%;
     max-width: 125px;
+  }
+  .series_info_thumbs .book_info h2 {
+    max-width: 220px;
+  }
+  .series_info_thumbs .book_info .book_txt {
+    max-width: 220px;
   }
 }
 
@@ -2128,11 +2134,16 @@ Media Queries for Responsive Design.
   .main-slide-con .summary_description .level:before {
     top: 0.5px;
   }
+  .series_info_thumbs .book_thumbnail {
+    min-width: 125px;
+  }
   .series_info_thumbs .book_info h2 {
     font-size: 15px;
+    max-width: 180px;
   }
   .series_info_thumbs .book_info .book_txt {
     font-size: 13px;
+    max-width: 200px;
   }
 }
 @media only screen and (max-width: 375px) {

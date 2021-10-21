@@ -1,6 +1,98 @@
 $(function () {
+  //연관 도서 추천
+  function detailSwipe() {
 
 
+    function relatedSwiper() {
+      var ww = $(window).width();
+      var relatedCont = undefined;
+      
+      if ($(".book_list_wrap div").length > 0) {
+        var bookIndex = $(".book_list_wrap .swiper-slide").realIndex;
+        $(".related_control p").text(1 + "/" + $(".related_wrap .swiper-slide").length);
+
+        // var bookIndex = $(".book_list_wrap .swiper-slide").realIndex;
+        // $(".related_control p").text(bookIndex + "/" + $(".related_wrap .swiper-slide").length);	
+      } else {
+        $(".related_control p").text("0/0");
+      }
+      if (ww < 740 && relatedCont == undefined) {
+        relatedCont = new Swiper(".related_wrap .book_list_wrap", {
+          slidesPerView: 'auto',
+          grabCursor: true,       
+          initialSlide : 0,    
+          slidesPerGroup: 1,
+          loop: false,
+          // centeredSlides: true,
+          spaceBetween: 0,observer: true, observeParents: true,
+          zoom : true, watchOverflow: true,
+          touchRatio: 0.3,
+          slideToClickedSlide: true,
+          freeMode: true,
+          // pagination: {
+          //   el: '.related_control .related_count',
+          //   type: 'fraction',
+          // },
+          pagination: {
+            el: '.related_control .progressbar',
+            type: 'progressbar',
+          },
+        })
+          .on('slideChange', function (swiper, activeslide, totalslide) {
+            var activeslide = relatedCont.realIndex;
+            var totalslide = $(".related_wrap .swiper-slide").length;
+            $(".related_control p").text((activeslide + 1) + "/" + totalslide);	//현재 페이지수 / 전체 페이지수
+          });
+    
+      } else if (ww >= 740 && relatedCont != undefined) {
+        relatedCont.destroy();
+        relatedCont = undefined;
+
+      }
+    }
+    relatedSwiper();
+
+    // $(window).on('resize', function () {
+    //   ww = $(window).width();
+    //   relatedSwiper();
+    // });
+   } detailSwipe();
+
+  function vodSwipe() {
+    var vodCont = undefined;
+    
+  if ($(".vod_wrap div").length > 0) {
+    $(".vod_control p").text("1/" + $(".vod_wrap .swiper-slide").length);
+  } else {
+    $(".vod_control p").text("0/0");	
+  }
+      var vodCont = new Swiper(".vod_cont", {
+        
+        initialSlide : 1,slidesPerView: 4,slidesPerGroup: 4, spaceBetween: 20, loop: false, grabCursor: true, 
+        navigation: {
+          nextEl: '.sl-nav .swiper-button-next',
+          prevEl: '.sl-nav .swiper-button-prev',
+        },
+        pagination: {
+          el: '.vod_control .progressbar',
+          type: 'progressbar',
+        },
+        breakpoints: {
+          1140: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
+          768: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 22, touchRatio: 0.3, slideToClickedSlide: true, freeMode: true }
+        },          
+        on: {
+          slideChange: function (swiper, activeslide, totalslide) {
+            var activeslide = vodCont.realIndex;
+            var totalslide = vodCont.slides.length;
+            $(".vod_control p").text((activeslide + 1) + "/" + totalslide);	
+          },
+        },
+      });
+    }
+    vodSwipe();
+
+  //도서상세 - 더보기
   jQuery(function ($) {
     var colorbox = $('.info_color .info_data');
     colorbox.each(function () {
@@ -16,6 +108,7 @@ $(function () {
       }
     });
   });
+
   // 인기도서 TOP10
   var rankSwiper = new Swiper(".topten", {
     direction: 'vertical',

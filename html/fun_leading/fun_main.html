@@ -9,13 +9,13 @@
 	<title>EBS English</title>
 	<link rel="stylesheet" type="text/css" href="../../css/NotoSansKR-Hestia.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/common_new2020.css" />
-	<link rel="stylesheet" type="text/css" href="../../css/circle.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="../../css/circle.css" /> -->
 	<link rel="stylesheet" type="text/css" href="../../css/sub_new2020.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/sub_new.css" />
 	<link rel="stylesheet" type="text/css" href="../../css/swiper/swiper.css">
 	<link rel="stylesheet" type="text/css" href="../../css/funreading_new.css" />
 	<!-- <link rel="stylesheet" type="text/css" href="../../css/main_new2020.css"/> -->
-	<link rel="stylesheet" type="text/css" href="../../css/slick/slick.css">
+	<!-- <link rel="stylesheet" type="text/css" href="../../css/slick/slick.css"> -->
 	<link rel="stylesheet" type="text/css" href="../../css/wow-animate.css" />
 	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;900&display=swap" rel="stylesheet">
 	<script src="../../js/swiper/swiper.js"></script>
@@ -443,7 +443,61 @@
 				<div class="swiper-pagination slick-dots"></div>
 			</div>
 			<!-- //메인 슬라이드 -->
+			<script>
 
+				//Swiper JS - MAIN SLIDER
+				var galleryThumbsMain = new Swiper('.gallery_thumbs', {
+					spaceBetween: 5,
+					slidesPerView: 6,
+					loop: true,
+					touchRatio: 0.3,
+					slideToClickedSlide: true,
+					freeMode: false,
+					loopedSlides: 6,
+					watchSlidesVisibility: true,
+					watchSlidesProgress: true,
+					controller: {
+						inverse: true,
+					},
+					breakpoints: {
+						1140: {
+							spaceBetween: 10
+						}
+					}
+				});
+				var galleryTopMain = new Swiper('.gallery_top', {
+					spaceBetween: 5,
+					effect: 'fade',
+					loop: true,
+					autoplay: {
+						delay: 3000,
+						disableOnInteraction: false,
+					},
+					loopedSlides: 6,
+					controller: {
+						inverse: true,
+					},
+					pagination: {
+						el: ".swiper-pagination",
+						type: 'bullets',
+						clickable: true
+					},
+					breakpoints: {
+						1140: {
+							spaceBetween: 0
+						},
+						768: {
+							autoplay: {
+								delay: 3000,
+								disableOnInteraction: false,
+							},
+						}
+					}
+				});
+
+				galleryTopMain.controller.control = galleryThumbsMain;
+				galleryThumbsMain.controller.control = galleryTopMain;
+			</script>
 			<!-- ranking, search -->
 			<div class="recommend_wrap">
 				<div class="top_container inner">

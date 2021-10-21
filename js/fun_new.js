@@ -1,132 +1,21 @@
 $(function () {
 
-  function detailSwipe() {
-    //연관 도서 추천
-    var ww = $(window).width();
-    var relatedCont = undefined;
-    var vodCont = undefined;
-    
 
-    function relatedSwiper() {
-      if ($(".book_list_wrap div").length > 0) {
-        var bookIndex = $(".book_list_wrap .swiper-slide").realIndex;
-        $(".control p").text(bookIndex + "/" + 6);	//최초 페이징 세팅
-      } else {
-        $(".control p").text("0/0");	//최초 페이징 세팅
+  jQuery(function ($) {
+    var colorbox = $('.info_color .info_data');
+    colorbox.each(function () {
+      $(this).outerHeight();
+      if ($(this).outerHeight() > 36) {
+        $(this).addClass('hidden');
+        var btnMoreCmt = $(this).siblings('.btn-moreInfo');
+        btnMoreCmt.show();
+        btnMoreCmt.on("click", function () {
+          $(this).siblings('.info_data').removeClass('hidden');
+          $(this).remove();
+        });
       }
-      if (ww < 740 && relatedCont == undefined) {
-        relatedCont = new Swiper(".related_wrap .book_list_wrap", {
-          slidesPerView: 'auto',
-          grabCursor: true,       
-          initialSlide : 0,    
-          // slidesPerGroup: 1,
-          loop: true, freeMode: false,
-          // centeredSlides: true,
-          spaceBetween: 0,observer: true, observeParents: true,
-          zoom : true, watchOverflow: true,
-          touchRatio: 0.3,
-          slideToClickedSlide: true,
-          // pagination: {
-          //   el: '.control .count',
-          //   type: 'fraction',
-          // },
-    
-          pagination: {
-            el: '.control .progressbar',
-            type: 'progressbar',
-          },
-          
-          // pagination: {
-          //   el: '.control .progressbar',
-          //   type: 'custom',
-          //   renderCustom: (swiper, current, total) => {
-          //       return this.customProgressBar(current, total);
-          //   }
-          // },
-    
-          // on: {
-          //   init: function(sw) {
-          //     $('.activeslide').text($('.swiper-slide:not(.swiper-slide-duplicate)').length)
-          //     $('.image-slider__current').text(sw.realIndex + 1)
-          //   },
-          //   slideChange: function (sw) {
-          //     $('.image-slider__current').text(sw.realIndex + 1)
-          //   },
-          // },
-        })
-          .on('slideChange', function (swiper, activeslide, totalslide) {
-            var activeslide = relatedCont.realIndex;
-            var totalslide = 6;
-            $(".control p").text((activeslide + 1) + "/" + totalslide);	//현재 페이지수 / 전체 페이지수
-          });
-    
-      } else if (ww >= 740 && relatedCont != undefined) {
-        relatedCont.destroy();
-        relatedCont = undefined;
-
-      }
-    }
-    
-    relatedSwiper();
-
-    $(window).on('resize', function () {
-      ww = $(window).width();
-      relatedSwiper();
     });
-
-
-      }
-      detailSwipe();
-      function vodSwipe() {
-        var vodCont = undefined;
-        
-      if ($(".vod_wrap div").length > 0) {
-        $(".vod_control p").text("1/" + $(".vod_wrap .swiper-slide").length);	//최초 페이징 세팅
-      } else {
-        $(".vod_control p").text("0/0");	//최초 페이징 세팅
-      }
-          var vodCont = new Swiper(".vod_cont", {
-            
-            initialSlide : 1,slidesPerView: 4,slidesPerGroup: 4, spaceBetween: 20, loop: false, grabCursor: true, 
-            navigation: {
-              nextEl: '.sl-nav .swiper-button-next',
-              prevEl: '.sl-nav .swiper-button-prev',
-            },
-            pagination: {
-              el: '.vod_control .progressbar',
-              type: 'progressbar',
-            },
-            breakpoints: {
-              1140: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
-              768: { slidesPerView: 1.2, slidesPerGroup: 1, spaceBetween: 22, touchRatio: 0.3, slideToClickedSlide: true, freeMode: true }
-            },          
-            on: {
-              slideChange: function (swiper, activeslide, totalslide) {
-                var activeslide = vodCont.realIndex;
-                var totalslide = vodCont.slides.length;
-                $(".vod_control p").text((activeslide + 1) + "/" + totalslide);	//현재 페이지수 / 전체 페이지수
-              },
-            },
-          });
-        }
-        vodSwipe();
-
-        
-				jQuery(function ($) {
-					var colorbox = $('.info_color .info_data');
-					colorbox.each(function () {
-						$(this).outerHeight();
-						if ($(this).outerHeight() > 21) {
-							$(this).addClass('hidden');
-							var btnMoreCmt = $(this).siblings('.btn-moreInfo');
-							btnMoreCmt.show();
-							btnMoreCmt.on("click", function () {
-								$(this).siblings('.info_data').removeClass('hidden');
-								$(this).remove();
-							});
-						}
-					});
-				});
+  });
   // 인기도서 TOP10
   var rankSwiper = new Swiper(".topten", {
     direction: 'vertical',
@@ -193,57 +82,6 @@ $(function () {
     $(this).toggleClass('on');
   });
 
-  //Swiper JS - MAIN SLIDER
-  var galleryThumbsMain = new Swiper('.gallery_thumbs', {
-    spaceBetween: 5,
-    slidesPerView: 6,
-    loop: true,
-    touchRatio: 0.3,
-    slideToClickedSlide: true,
-    freeMode: false,
-    loopedSlides: 6,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    controller: {
-      inverse: true,
-    },
-    breakpoints: {
-      1140: {
-        spaceBetween: 10
-      }
-    }
-  });
-  var galleryTopMain = new Swiper('.gallery_top', {
-    spaceBetween: 5,
-    effect: 'fade',
-    loop: true,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false,
-    },
-    loopedSlides: 6,
-    controller: {
-      inverse: true,
-    },
-    pagination: {
-      el: ".swiper-pagination",
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      1140: {
-        spaceBetween: 0
-      },
-      768: {
-        autoplay: {
-          delay: 3000,
-          disableOnInteraction: false,
-        },
-      }
-    }
-  });
-  galleryTopMain.controller.control = galleryThumbsMain;
-  galleryThumbsMain.controller.control = galleryTopMain;
 
   //Swiper JS - funSeriesSwipe
   function funSeriesSwipe() {

@@ -443,61 +443,6 @@
 				<div class="swiper-pagination slick-dots"></div>
 			</div>
 			<!-- //메인 슬라이드 -->
-			<script>
-
-				//Swiper JS - MAIN SLIDER
-				var galleryThumbsMain = new Swiper('.gallery_thumbs', {
-					spaceBetween: 5,
-					slidesPerView: 6,
-					loop: true,
-					touchRatio: 0.3,
-					slideToClickedSlide: true,
-					freeMode: false,
-					loopedSlides: 6,
-					watchSlidesVisibility: true,
-					watchSlidesProgress: true,
-					controller: {
-						inverse: true,
-					},
-					breakpoints: {
-						1140: {
-							spaceBetween: 10
-						}
-					}
-				});
-				var galleryTopMain = new Swiper('.gallery_top', {
-					spaceBetween: 5,
-					effect: 'fade',
-					loop: true,
-					autoplay: {
-						delay: 3000,
-						disableOnInteraction: false,
-					},
-					loopedSlides: 6,
-					controller: {
-						inverse: true,
-					},
-					pagination: {
-						el: ".swiper-pagination",
-						type: 'bullets',
-						clickable: true
-					},
-					breakpoints: {
-						1140: {
-							spaceBetween: 0
-						},
-						768: {
-							autoplay: {
-								delay: 3000,
-								disableOnInteraction: false,
-							},
-						}
-					}
-				});
-
-				galleryTopMain.controller.control = galleryThumbsMain;
-				galleryThumbsMain.controller.control = galleryTopMain;
-			</script>
 			<!-- ranking, search -->
 			<div class="recommend_wrap">
 				<div class="top_container inner">

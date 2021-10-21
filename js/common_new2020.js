@@ -1387,8 +1387,10 @@ function ThumbMov(){
 	});
 }
 
-wow = new WOW({ animateClass: 'animated' });
-wow.init();
+$( document ).ready(function() {
+    wow = new WOW({ animateClass: 'animated' });
+    new WOW().init();
+});
 
 //금칙어 필터
 var wordFilter = {

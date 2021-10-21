@@ -33,6 +33,7 @@ button {
 .detail_description .sub_con .btn-moreInfo {
   display: none;
 }
+
 /* lnb */
 button.fl_btn {
   float: right;
@@ -1575,9 +1576,9 @@ body.sub .filter_wrap .filter-box .bt {
   align-items: center;
   margin-right: 8px;
   letter-spacing: -0.35px;
-  font-size: 14px;
-  width: 120px;
-  height: 30px;
+  font-size: 13px;
+  width: 98px;
+  height: 31px;
   text-align: center;
   border: 1px solid #222;
 }
@@ -1588,8 +1589,8 @@ body.sub .filter_wrap .filter-box .bt {
   width: 1rem;
   height: 1.5rem;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
   background: url(../images/funreading/icon/ebook_img.png) no-repeat 0% 50%;
+  background-size: 65%;
 }
 
 .detail_description .mp3_btn::before {
@@ -1599,8 +1600,8 @@ body.sub .filter_wrap .filter-box .bt {
   width: 1rem;
   height: 1.5rem;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
   background: url(../images/funreading/icon/mp3_img.png) no-repeat 0% 50%;
+  background-size: 80%;
 }
 .detail_description .learning_btn::before {
   content: "";
@@ -1609,8 +1610,8 @@ body.sub .filter_wrap .filter-box .bt {
   width: 1rem;
   height: 1.5rem;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
   background: url(../images/funreading/icon/learning_img.png) no-repeat 0% 50%;
+  background-size: 85%;
 }
 .detail_visual_wrap .bt.ico.share {
   position: absolute;
@@ -2568,8 +2569,7 @@ body.sub .fun_review_board .page {
     padding: 0 0 30px 16px;
   }
   .detail_description .level {
-    font-size: 12px;
-    padding-bottom: 10px;
+    font-size: 13px;
   }
   .detail_description .tit {
     font-size: 22px;
@@ -3244,7 +3244,7 @@ body.sub .fun_review_board .page {
     line-height: 1.4;
     letter-spacing: -0.45px;
     font-weight: 400;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     word-break: break-all;
     display: block;
@@ -3255,15 +3255,48 @@ body.sub .fun_review_board .page {
   }
   .detail_description .sub_con .btn-moreInfo {
     display: none;
+    position: relative;
     white-space: nowrap;
-    color: #7e7e7e;
+    color: #222;
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: -0.35px;
     margin-top: 5px;
     font-weight: 400;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding-left: 12px;
+    letter-spacing: -0.35px;
+    font-size: 13px;
+    width: 82px;
+    height: 31px;
+    text-align: center;
+    border: 1px solid #222;
+    margin: 22px auto 0;
   }
 
+  .detail_description .sub_con .btn-moreInfo::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -6px;
+    right: 16px;
+    z-index: 1;
+    width: 8px;
+    height: 8px;
+    border: 1px solid #222;
+    border-top: 0;
+    border-right: 0;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
   /* 모달 컨텐츠 */
   .modal_body {
     width: calc(100vw - 35px);
@@ -3289,7 +3322,14 @@ body.sub .fun_review_board .page {
     align-items: center;
   }
   body.sub .filter_wrap .filter-box {
-    margin: 22px auto 26px;
+    margin: 24px 0 14px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
   }
   .filter_wrap .select_wrap {
     width: 100%;

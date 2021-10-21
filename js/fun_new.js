@@ -57,13 +57,13 @@ $(function () {
     return false;
   });
 
-  // 탭 
+  // 탭
   $('.tabs li').on('click', function (e) {
     $('.tabs li').removeClass('on');
     $(this).addClass('on');
   });
 
-  // 인기순, 최신순 
+  // 인기순, 최신순
   $('.filter-box .order > div').on('click', function (e) {
     e.preventDefault();
     $('.filter-box .order > div').removeClass('on');
@@ -168,13 +168,13 @@ $(function () {
 
 
 
-  
+
   }
   funSeriesSwipe();
 
 
 
-  //modal 
+  //modal
   $('.series_more_btn').on('click', function (e) {
     e.preventDefault();
     $('.modal').addClass('modal-opened');
@@ -187,6 +187,57 @@ $(function () {
     $('.modal').removeClass('modal-opened');
     $(body).removeClass('bodyscroll');
   });
+var galleryThumbsMain = new Swiper('.gallery_thumbs', {
+    spaceBetween: 5,
+    slidesPerView: 6,
+    loop: true,
+    touchRatio: 0.3,
+    slideToClickedSlide: true,
+    freeMode: false,
+    loopedSlides: 6,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    controller: {
+        inverse: true,
+        },
+    breakpoints: {
+        1140: {
+            spaceBetween: 10
+        }
+    }
+});
 
+var galleryTopMain = new Swiper('.gallery_top', {
+    spaceBetween: 5,
+    effect: 'fade',
+    loop: true,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+        },
+    loopedSlides: 6,
+    controller: {
+        inverse: true,
+        },
+    pagination: {
+        el: ".swiper-pagination",
+        type: 'bullets',
+        clickable: true
+        },
+    breakpoints: {
+        1140: {
+            spaceBetween: 0
+            },
+    768: {
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+            },
+        }
+    }
+});
+
+galleryThumbsMain.params.control = galleryTopMain;
+galleryTopMain.params.control = galleryThumbsMain;
 
 });

@@ -1431,7 +1431,7 @@ body.sub .filter_wrap .filter-box .bt {
 }
 
 /* ==========================================================================
-  도서 상세
+ 도서 상세
  ========================================================================== */
 .detail_visual_wrap {
   margin: 0 auto;
@@ -1615,11 +1615,11 @@ body.sub .filter_wrap .filter-box .bt {
   position: absolute;
   right: 30px;
   top: 45px;
-  background: url(../images/funreading/icon/funreading_share.png) no-repeat 47%
-    51%;
+  background: url(../images/funreading/icon/funreading_share_pc.png) no-repeat
+    48% 52%;
   border: 1px solid #222;
   background-color: transparent;
-  background-size: 42%;
+  background-size: 13px;
   border-radius: 100px;
   width: 36px;
   height: 36px;
@@ -1990,8 +1990,6 @@ section.eggfun .bt.ico.share.nb {
 .fun_review_board .fun_review_title .star_score strong {
   font-weight: 500;
 }
-.cmt_write_frm {
-}
 .cmt_write_frm fieldset legend {
   display: none;
 }
@@ -2013,8 +2011,7 @@ section.eggfun .bt.ico.share.nb {
   height: 30px;
   background: url(../images/funreading/icon/rating_star_on.png) repeat-x 0 0;
   background-size: contain;
-  pointer-events: none;
-  /* background-color: #febb2c; */
+  pointer-events: none; /* background-color: #febb2c; */
 }
 .cmt_write_frm .score_rating .startRadio_box {
   position: relative;
@@ -2242,22 +2239,117 @@ textarea.textar_pd::placeholder {
 body.sub .fun_review_board .page {
   padding: 20px 0 80px;
 }
-.btn_static {
-  background: #f5f5f5;
-  position: relative;
-  z-index: 30;
+
+/* 하단 플로팅 배너 */
+.sticky {
+  width: 100%;
+  height: 140px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #222;
+  z-index: 100;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition: all ease-in-out 0.5s;
 }
-.bottom_btn_wrap {
+.sticky .bottom_btn_wrap {
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0 auto;
   max-width: 1140px;
-  padding: 35px 20px;
+  padding: 40px 40px;
 }
-.fix {
-  position: fixed;
-  _position: absolute;
-  width: 100%;
-  top: 0;
-  z-index: 100;
+.sticky .bottom_btn_wrap .subtit {
+  font-weight: 500;
+  font-size: 22px;
+  text-align: left;
+  line-height: 1.33;
+  color: #222;
+  letter-spacing: -0.5px;
+}
+
+.sticky .bottom_btn_wrap .subtxt {
+  font-weight: 400;
+  font-size: 18px;
+  text-align: left;
+  line-height: 1.33;
+  color: #222;
+  letter-spacing: -0.5px;
+  margin-top: 10px;
+}
+.sticky .bottom_btn_wrap .subtxt .emph_sign {
+  color: #f57e25;
+  font-weight: 600;
+}
+.sticky .bottom_btn_wrap .btn_wrap {
+  display: -ms-flexbox;
+  display: flex;
+}
+.sticky .bottom_btn_wrap .ebook_btn,
+.sticky .bottom_btn_wrap .mp3_btn,
+.sticky .bottom_btn_wrap .bookmark_btn,
+.sticky .bottom_btn_wrap .learning_btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: 8px;
+  letter-spacing: -0.35px;
+  font-size: 13px;
+  width: 98px;
+  height: 31px;
+  text-align: center;
+  border: 1px solid #222;
+}
+.sticky .bottom_btn_wrap .ebook_btn::before {
+  content: "";
+  display: block;
+  margin-right: 3px;
+  width: 1rem;
+  height: 1.5rem;
+  background: url(../images/funreading/icon/pc_ebook_img.png) no-repeat 0% 50%;
+}
+.sticky .bottom_btn_wrap .mp3_btn::before {
+  content: "";
+  display: block;
+  margin-right: 3px;
+  width: 1rem;
+  height: 1.5rem;
+  background: url(../images/funreading/icon/pc_mp3_img.png) no-repeat 0% 50%;
+}
+.sticky .bottom_btn_wrap .bookmark_btn::before {
+  content: "";
+  display: block;
+  margin-right: 3px;
+  width: 1rem;
+  height: 1.5rem;
+  background: url(../images/funreading/icon/pc_bookmark_img.png) no-repeat 0%
+    50%;
+}
+.sticky .bottom_btn_wrap .learning_btn::before {
+  content: "";
+  display: block;
+  margin-right: 3px;
+  width: 1rem;
+  height: 1.5rem;
+  background: url(../images/funreading/icon/pc_learning_img.png) no-repeat 0%
+    50%;
+}
+.detail_visual_wrap .bt.ico.share {
+  background: url(../images/funreading/icon/funreading_share_m.png) no-repeat
+    48% 52%;
+  background-size: 14px;
 }
 
 /* Media Queries for Responsive Design.
@@ -3267,7 +3359,6 @@ body.sub .fun_review_board .page {
     border: 1px solid #222;
     margin: 22px auto 0;
   }
-
   .detail_description .sub_con .btn-moreInfo::before {
     content: "";
     display: block;
@@ -3567,8 +3658,7 @@ body.sub .fun_review_board .page {
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 0;
-    padding-top: 0;
-    /* margin-left: -28%; */
+    padding-top: 0; /* margin-left: -28%; */
   }
   .related_wrap .book_list_wrap {
     margin-bottom: 10px;
@@ -3576,19 +3666,7 @@ body.sub .fun_review_board .page {
   .related_wrap .book_list_wrap .swiper-slide {
     padding: 0;
     width: 42%;
-    /* max-width: 165px; */
-    /* min-width: 165px; */
     padding-right: 25px;
-    /* padding: 0 8px; */
-  }
-  .related_wrap .book_list_wrap .swiper-wrapper {
-    /* justify-content: center; */
-
-    /* transform: translateX(-50%); */
-    /* -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center; */
   }
   .related_wrap .title,
   .vod_wrap .title {
@@ -3599,18 +3677,11 @@ body.sub .fun_review_board .page {
   section.eggfun .vod_wrap > .inner {
     padding: 0 20px;
   }
-  .vod_wrap .vod_slider {
-  }
-  .vod_wrap .title {
-  }
   .vod_wrap .vod_slider .vod_cont {
     overflow: visible;
     padding: 0 0 30px;
   }
-  .vod_wrap .swiper-slide {
-  }
   .vod_wrap .swiper-slide .vod_card_wrap {
-    /* width: 25%; */
     box-shadow: 1px 13px 12px rgb(0 0 0 / 10%);
   }
   .vod_wrap .sl-nav {
@@ -3760,6 +3831,88 @@ body.sub .fun_review_board .page {
     background: url(../images/funreading/icon/m_learning_img.png) no-repeat 0%
       50%;
     background-size: 77%;
+  }
+
+  /* 하단 플로팅 배너 */
+  .sticky {
+    height: 150px;
+  }
+  .sticky .bottom_btn_wrap {
+    -webkit-box-orient: vertical;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 24px 0;
+  }
+  .sticky .bottom_btn_wrap .subtit {
+    font-size: 15px;
+    text-align: center;
+  }
+  .sticky .bottom_btn_wrap .subtxt {
+    font-size: 14px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  .sticky .bottom_btn_wrap .subtxt .emph_sign {
+    color: #f57e25;
+    font-weight: 600;
+  }
+  .sticky .bottom_btn_wrap .btn_wrap {
+    margin-top: 18px;
+  }
+  .sticky .bottom_btn_wrap .ebook_btn,
+  .sticky .bottom_btn_wrap .mp3_btn,
+  .sticky .bottom_btn_wrap .bookmark_btn,
+  .sticky .bottom_btn_wrap .learning_btn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-left: 8px;
+    letter-spacing: -0.35px;
+    font-size: 0;
+    text-indent: -9999px;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    border: 1px solid #222;
+  }
+  .sticky .bottom_btn_wrap .ebook_btn::before {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 1.5rem;
+    margin: 0;
+    background-repeat: no-repeat;
+    background: url(../images/funreading/icon/m_ebook_img.png) no-repeat 50% 50%;
+    background-size: 70%;
+  }
+  .sticky .bottom_btn_wrap .mp3_btn::before {
+    width: 14.5px;
+    height: 1.5rem;
+    margin: 0;
+    background: url(../images/funreading/icon/m_mp3_img.png) no-repeat 50% 50%;
+    background-size: 95%;
+  }
+  .sticky .bottom_btn_wrap .bookmark_btn::before {
+    width: 15px;
+    height: 1.5rem;
+    margin: 0;
+    background: url(../images/funreading/icon/m_bookmark_img.png) no-repeat 50%
+      50%;
+    background-size: 80%;
+  }
+  .sticky .bottom_btn_wrap .learning_btn::before {
+    width: 14px;
+    height: 1.5rem;
+    margin: 0;
+    background: url(../images/funreading/icon/m_learning_img.png) no-repeat 50%
+      50%;
+    background-size: 95%;
   }
 }
 

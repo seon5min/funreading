@@ -1,8 +1,25 @@
 $(function () {
+  $(window).scroll(function(){
+    var stickyElement = $('.sticky').outerHeight()
+    var windowHeight = $(this).outerHeight()
+    var target = $('footer').offset().top - windowHeight - stickyElement
+    
+    if($(window).scrollTop() <= target){
+      $('.sticky-placeholder').css('height', stickyElement)
+      $('.sticky').css({
+        'position': 'fixed',
+        'bottom': '0'
+      })
+    } else {
+      $('.sticky-placeholder').css('height', 0)
+      $('.sticky').css({
+        'position': 'relative',
+        'bottom': '-100%'
+      })
+    }
+  })
   //연관 도서 추천
   function detailSwipe() {
-
-
     function relatedSwiper() {
       var ww = $(window).width();
       var relatedCont = undefined;
@@ -23,16 +40,11 @@ $(function () {
           initialSlide : 0,    
           slidesPerGroup: 1,
           loop: false,
-          // centeredSlides: true,
           spaceBetween: 0,observer: true, observeParents: true,
           zoom : true, watchOverflow: true,
           touchRatio: 0.3,
           slideToClickedSlide: true,
           freeMode: true,
-          // pagination: {
-          //   el: '.related_control .related_count',
-          //   type: 'fraction',
-          // },
           pagination: {
             el: '.related_control .progressbar',
             type: 'progressbar',
@@ -52,10 +64,10 @@ $(function () {
     }
     relatedSwiper();
 
-    // $(window).on('resize', function () {
-    //   ww = $(window).width();
-    //   relatedSwiper();
-    // });
+    $(window).on('resize', function () {
+      ww = $(window).width();
+      relatedSwiper();
+    });
    } detailSwipe();
 
   function vodSwipe() {
@@ -79,7 +91,7 @@ $(function () {
         },
         breakpoints: {
           1140: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
-          768: { slidesPerView: 1, slidesPerGroup: 1, spaceBetween: 22, touchRatio: 0.3, slideToClickedSlide: true, freeMode: true }
+          768: { slidesPerView: 1.2, slidesPerGroup: 1, spaceBetween: 22, touchRatio: 0.3, slideToClickedSlide: true, freeMode: true }
         },          
         on: {
           slideChange: function (swiper, activeslide, totalslide) {

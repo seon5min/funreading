@@ -63,6 +63,7 @@ button.fl_btn .ico_view::after {
 /* ==========================================================================
  LAYOUT
 ========================================================================== */
+/* 메인 슬라이드 */
 .main_banner_wrap {
   position: relative;
   margin: 0 auto;
@@ -252,7 +253,6 @@ button.fl_btn .ico_view::after {
   -o-transform: rotate(-45deg);
   transform: rotate(45deg);
 }
-
 /* thumbs */
 .main_banner_wrap .thumbs_con {
   position: relative;
@@ -565,7 +565,7 @@ button.fl_btn .ico_view::after {
 .book_search .search_bar .search_btn {
   position: absolute;
   top: 2px;
-  right: 2px; /* margin-top: -2px; */
+  right: 2px;
   background: url(../images/funreading/icon/book_search_icon.png) no-repeat 0
     50%;
   background-size: 30px;
@@ -1251,7 +1251,6 @@ body.sub .filter-box .filter .order > div.on:before {
   border-radius: 20px;
   margin-bottom: 5px;
 }
-
 .slide_seciton_05 {
   padding-bottom: 40px;
 }
@@ -1453,7 +1452,8 @@ body.sub .filter_wrap .filter-box .bt {
   padding: 0 80px;
 }
 .detail_visual_wrap .inner .detail_thumbnail {
-  max-width: 240px;
+  width: 100%;
+  min-width: 240px;
   height: auto;
   -webkit-box-align: start;
   -ms-flex-align: start;
@@ -1547,7 +1547,6 @@ body.sub .filter_wrap .filter-box .bt {
   color: #222;
   white-space: normal;
 }
-
 .detail_description .learning_date {
   color: #7e7e7e;
   font-size: 14px;
@@ -1656,6 +1655,10 @@ section.eggfun .bt.ico.share.nb {
   position: relative;
   max-width: 1140px;
   padding: 0 20px;
+}
+.related_wrap > .inner,
+.fun_review_board > .inner {
+  padding: 40px 20px 70px 20px;
 }
 .related_wrap .book_list_wrap {
   -ms-flex-align: baseline;
@@ -1916,7 +1919,6 @@ section.eggfun .bt.ico.share.nb {
     no-repeat left center;
   background-size: 19px;
 }
-
 .vod_wrap .swiper-slide .vod_card {
   position: relative;
   padding-top: 56%;
@@ -1944,7 +1946,7 @@ section.eggfun .bt.ico.share.nb {
  리뷰
 ========================================================================== */
 .fun_review_board {
-  margin: 110px auto 0;
+  margin: 30px auto 0;
 }
 .fun_review_board .fun_review_title {
   display: -ms-flexbox;
@@ -1993,7 +1995,6 @@ section.eggfun .bt.ico.share.nb {
 .cmt_write_frm fieldset legend {
   display: none;
 }
-
 .cmt_write_frm .score_rating {
   margin-top: 47px;
   margin-bottom: 22px;
@@ -2011,7 +2012,7 @@ section.eggfun .bt.ico.share.nb {
   height: 30px;
   background: url(../images/funreading/icon/rating_star_on.png) repeat-x 0 0;
   background-size: contain;
-  pointer-events: none; /* background-color: #febb2c; */
+  pointer-events: none;
 }
 .cmt_write_frm .score_rating .startRadio_box {
   position: relative;
@@ -2237,9 +2238,8 @@ textarea.textar_pd::placeholder {
   pointer-events: none;
 }
 body.sub .fun_review_board .page {
-  padding: 20px 0 80px;
+  padding: 20px 0 20px;
 }
-
 /* 하단 플로팅 배너 */
 .sticky {
   width: 100%;
@@ -2345,11 +2345,6 @@ body.sub .fun_review_board .page {
   height: 1.5rem;
   background: url(../images/funreading/icon/pc_learning_img.png) no-repeat 0%
     50%;
-}
-.detail_visual_wrap .bt.ico.share {
-  background: url(../images/funreading/icon/funreading_share_m.png) no-repeat
-    48% 52%;
-  background-size: 14px;
 }
 
 /* Media Queries for Responsive Design.
@@ -2690,7 +2685,7 @@ body.sub .fun_review_board .page {
     margin-left: 40px;
   }
   .detail_visual_wrap .inner .detail_thumbnail {
-    max-width: 200px;
+    min-width: 200px;
     margin-top: 40px;
   }
   .detail_visual_wrap .inner {
@@ -2704,6 +2699,16 @@ body.sub .fun_review_board .page {
   }
   .category_wrap .book_list_wrap .book_list_thumb {
     margin-left: -12px;
+  }
+  .sticky .bottom_btn_wrap .subtit {
+    font-size: 18px;
+  }
+  .sticky .bottom_btn_wrap .subtxt {
+    font-size: 15px;
+    margin-top: 7px;
+  }
+  .sticky .bottom_btn_wrap .btn_wrap {
+    width: 50%;
   }
 }
 
@@ -3524,8 +3529,8 @@ body.sub .fun_review_board .page {
   }
   .detail_visual_wrap .inner .detail_thumbnail {
     margin: 0 auto;
-    width: 100%;
-    max-width: 142px;
+    width: 10%;
+    min-width: 142px;
     min-height: 215px;
   }
   .detail_description .bookmark_ico {
@@ -3658,7 +3663,7 @@ body.sub .fun_review_board .page {
     margin-left: 0;
     margin-right: 0;
     padding-bottom: 0;
-    padding-top: 0; /* margin-left: -28%; */
+    padding-top: 0;
   }
   .related_wrap .book_list_wrap {
     margin-bottom: 10px;
@@ -3858,6 +3863,10 @@ body.sub .fun_review_board .page {
   }
   .sticky .bottom_btn_wrap .btn_wrap {
     margin-top: 18px;
+    width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .sticky .bottom_btn_wrap .ebook_btn,
   .sticky .bottom_btn_wrap .mp3_btn,
@@ -3881,6 +3890,9 @@ body.sub .fun_review_board .page {
     text-align: center;
     border: 1px solid #222;
   }
+  .sticky .bottom_btn_wrap .ebook_btn {
+    margin-left: 0;
+  }
   .sticky .bottom_btn_wrap .ebook_btn::before {
     content: "";
     display: block;
@@ -3892,7 +3904,7 @@ body.sub .fun_review_board .page {
     background-size: 70%;
   }
   .sticky .bottom_btn_wrap .mp3_btn::before {
-    width: 14.5px;
+    width: 15px;
     height: 1.5rem;
     margin: 0;
     background: url(../images/funreading/icon/m_mp3_img.png) no-repeat 50% 50%;
@@ -3904,15 +3916,20 @@ body.sub .fun_review_board .page {
     margin: 0;
     background: url(../images/funreading/icon/m_bookmark_img.png) no-repeat 50%
       50%;
-    background-size: 80%;
+    background-size: 76%;
   }
   .sticky .bottom_btn_wrap .learning_btn::before {
-    width: 14px;
+    width: 16px;
     height: 1.5rem;
     margin: 0;
     background: url(../images/funreading/icon/m_learning_img.png) no-repeat 50%
       50%;
-    background-size: 95%;
+    background-size: 94%;
+  }
+  .detail_visual_wrap .bt.ico.share {
+    background: url(../images/funreading/icon/funreading_share_m.png) no-repeat
+      48% 52%;
+    background-size: 14px;
   }
 }
 

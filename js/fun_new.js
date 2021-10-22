@@ -1,124 +1,58 @@
 $(function () {
-  $(window).scroll(function(){
-    var stickyElement = $('.sticky').outerHeight()
-    var windowHeight = $(this).outerHeight()
-    var target = $('footer').offset().top - windowHeight - stickyElement
-    
-    if($(window).scrollTop() <= target){
-      $('.sticky-placeholder').css('height', stickyElement)
-      $('.sticky').css({
-        'position': 'fixed',
-        'bottom': '0'
-      })
-    } else {
-      $('.sticky-placeholder').css('height', 0)
-      $('.sticky').css({
-        'position': 'relative',
-        'bottom': '-100%'
-      })
-    }
-  })
-  //연관 도서 추천
-  function detailSwipe() {
-    function relatedSwiper() {
-      var ww = $(window).width();
-      var relatedCont = undefined;
-      
-      if ($(".book_list_wrap div").length > 0) {
-        var bookIndex = $(".book_list_wrap .swiper-slide").realIndex;
-        $(".related_control p").text(1 + "/" + $(".related_wrap .swiper-slide").length);
-
-        // var bookIndex = $(".book_list_wrap .swiper-slide").realIndex;
-        // $(".related_control p").text(bookIndex + "/" + $(".related_wrap .swiper-slide").length);	
-      } else {
-        $(".related_control p").text("0/0");
-      }
-      if (ww < 740 && relatedCont == undefined) {
-        relatedCont = new Swiper(".related_wrap .book_list_wrap", {
-          slidesPerView: 'auto',
-          grabCursor: true,       
-          initialSlide : 0,    
-          slidesPerGroup: 1,
-          loop: false,
-          spaceBetween: 0,observer: true, observeParents: true,
-          zoom : true, watchOverflow: true,
-          touchRatio: 0.3,
-          slideToClickedSlide: true,
-          freeMode: true,
-          pagination: {
-            el: '.related_control .progressbar',
-            type: 'progressbar',
-          },
-        })
-          .on('slideChange', function (swiper, activeslide, totalslide) {
-            var activeslide = relatedCont.realIndex;
-            var totalslide = $(".related_wrap .swiper-slide").length;
-            $(".related_control p").text((activeslide + 1) + "/" + totalslide);	//현재 페이지수 / 전체 페이지수
-          });
-    
-      } else if (ww >= 740 && relatedCont != undefined) {
-        relatedCont.destroy();
-        relatedCont = undefined;
-
-      }
-    }
-    relatedSwiper();
-
-    $(window).on('resize', function () {
-      ww = $(window).width();
-      relatedSwiper();
-    });
-   } detailSwipe();
-
-  function vodSwipe() {
-    var vodCont = undefined;
-    
-  if ($(".vod_wrap div").length > 0) {
-    $(".vod_control p").text("1/" + $(".vod_wrap .swiper-slide").length);
-  } else {
-    $(".vod_control p").text("0/0");	
-  }
-      var vodCont = new Swiper(".vod_cont", {
-        
-        initialSlide : 1,slidesPerView: 4,slidesPerGroup: 4, spaceBetween: 20, loop: false, grabCursor: true, 
-        navigation: {
-          nextEl: '.sl-nav .swiper-button-next',
-          prevEl: '.sl-nav .swiper-button-prev',
+  //메인 배너 
+  var galleryThumbsMain = new Swiper('.gallery_thumbs', {
+    spaceBetween: 5,
+    slidesPerView: 6,
+    loop: true,
+    freeMode: true,
+    loopedSlides: 6,
+    watchOverflow: true,
+    watchSlidesVisibility: true,
+    watchSlidesProgress: true,
+    breakpoints: {
+        1140: {
+            spaceBetween: 10
+        }
+    },
+  });
+  var galleryTopMain = new Swiper('.gallery_top', {
+      spaceBetween: 5,
+      slidesPerView: 'auto',
+      effect: 'fade',
+      loop: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
         },
-        pagination: {
-          el: '.vod_control .progressbar',
-          type: 'progressbar',
+      loopedSlides: 6,
+      pagination: {
+        el: ".swiper-pagination",
+        type: 'bullets',
+        clickable: true
         },
-        breakpoints: {
-          1140: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
-          768: { slidesPerView: 1.2, slidesPerGroup: 1, spaceBetween: 22, touchRatio: 0.3, slideToClickedSlide: true, freeMode: true }
-        },          
-        on: {
-          slideChange: function (swiper, activeslide, totalslide) {
-            var activeslide = vodCont.realIndex;
-            var totalslide = vodCont.slides.length;
-            $(".vod_control p").text((activeslide + 1) + "/" + totalslide);	
-          },
+      breakpoints: {
+        1140: {
+            spaceBetween: 0
+            },
+        768: {
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+                allowTouchMove: true
+                },
+            }
         },
-      });
-    }
-    vodSwipe();
-
-  //도서상세 - 더보기
-  jQuery(function ($) {
-    var colorbox = $('.info_color .info_data');
-    colorbox.each(function () {
-      $(this).outerHeight();
-      if ($(this).outerHeight() > 36) {
-        $(this).addClass('hidden');
-        var btnMoreCmt = $(this).siblings('.btn-moreInfo');
-        btnMoreCmt.show();
-        btnMoreCmt.on("click", function () {
-          $(this).siblings('.info_data').removeClass('hidden');
-          $(this).remove();
-        });
-      }
-    });
+      thumbs: {
+        swiper: galleryThumbsMain
+      },
+  });
+  
+  galleryTopMain.on('slideChangeTransitionStart', function() {
+    galleryThumbsMain.slideTo(galleryTopMain.activeIndex);
+  });
+  
+  galleryThumbsMain.on('transitionStart', function(){
+    galleryTopMain.slideTo(galleryThumbsMain.activeIndex);
   });
 
   // 인기도서 TOP10
@@ -187,7 +121,6 @@ $(function () {
     $(this).toggleClass('on');
   });
 
-
   //Swiper JS - funSeriesSwipe
   function funSeriesSwipe() {
     //시리즈 슬라이드 01
@@ -203,7 +136,7 @@ $(function () {
       },
       breakpoints: {
         1140: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 20 },
-        768: { slidesPerView: "auto", spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true, freeMode: false }
+        768: { slidesPerView: "auto",freeMode: true, spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true }
       }
     });
     //시리즈 슬라이드 02
@@ -219,7 +152,7 @@ $(function () {
       },
       breakpoints: {
         1140: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 20 },
-        768: { slidesPerView: "auto", spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true, freeMode: false }
+        768: { slidesPerView: "auto", freeMode: true, spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true }
       }
     });
     //시리즈 슬라이드 03
@@ -235,7 +168,7 @@ $(function () {
       },
       breakpoints: {
         1140: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 20 },
-        768: { slidesPerView: "auto", spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true, freeMode: false }
+        768: { slidesPerView: "auto", freeMode: true, spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true }
       }
     });
     //시리즈 슬라이드 04
@@ -251,7 +184,7 @@ $(function () {
       },
       breakpoints: {
         1140: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 20 },
-        768: { slidesPerView: "auto", spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true, freeMode: false }
+        768: { slidesPerView: "auto", freeMode: true, spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true}
       }
     });
     //시리즈 슬라이드 05
@@ -267,17 +200,11 @@ $(function () {
       },
       breakpoints: {
         1140: { slidesPerView: 4, slidesPerGroup: 4, spaceBetween: 20 },
-        768: { slidesPerView: "auto", spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true, freeMode: false }
+        768: { slidesPerView: "auto", freeMode: true, spaceBetween: 18, touchRatio: 0.3, slideToClickedSlide: true}
       }
     });
-
-
-
-
   }
   funSeriesSwipe();
-
-
 
   //modal
   $('.series_more_btn').on('click', function (e) {
@@ -292,57 +219,126 @@ $(function () {
     $('.modal').removeClass('modal-opened');
     $(body).removeClass('bodyscroll');
   });
-var galleryThumbsMain = new Swiper('.gallery_thumbs', {
-    spaceBetween: 5,
-    slidesPerView: 6,
-    loop: true,
-    touchRatio: 0.3,
-    slideToClickedSlide: true,
-    freeMode: false,
-    loopedSlides: 6,
-    watchSlidesVisibility: true,
-    watchSlidesProgress: true,
-    controller: {
-        inverse: true,
-        },
-    breakpoints: {
-        1140: {
-            spaceBetween: 10
-        }
-    }
-});
 
-var galleryTopMain = new Swiper('.gallery_top', {
-    spaceBetween: 5,
-    effect: 'fade',
-    loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        },
-    loopedSlides: 6,
-    controller: {
-        inverse: true,
-        },
-    pagination: {
-        el: ".swiper-pagination",
-        type: 'bullets',
-        clickable: true
-        },
-    breakpoints: {
-        1140: {
-            spaceBetween: 0
-            },
-    768: {
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false,
-            },
-        }
+  // 하단 플로팅  배너
+  $(window).scroll(function(){
+    var stickyElement = $('.sticky').outerHeight()
+    var windowHeight = $(this).outerHeight()
+    var target = $('footer').offset().top - windowHeight - stickyElement
+    
+    if($(window).scrollTop() <= target){
+      $('.sticky-placeholder').css('height', stickyElement)
+      $('.sticky').css({
+        'position': 'fixed',
+        'bottom': '0'
+      })
+    } else {
+      $('.sticky-placeholder').css('height', 0)
+      $('.sticky').css({
+        'position': 'relative',
+        'bottom': '-100%'
+      })
     }
-});
+  })
 
-galleryThumbsMain.params.control = galleryTopMain;
-galleryTopMain.params.control = galleryThumbsMain;
+  //연관 도서 추천
+  function detailSwipe() {
+    function relatedSwiper() {
+      var ww = $(window).width();
+      var relatedCont = undefined;
+      
+      if ($(".book_list_wrap div").length > 0) {
+        $(".related_control p").text(1 + "/" + $(".related_wrap .swiper-slide").length);
+      } else {
+        $(".related_control p").text("0/0");
+      }
+      if (ww < 740 && relatedCont == undefined) {
+        relatedCont = new Swiper(".related_wrap .book_list_wrap", {
+          slidesPerView: 'auto',
+          grabCursor: true,       
+          initialSlide : 0,    
+          slidesPerGroup: 1,
+          loop: false,
+          spaceBetween: 0,observer: true, observeParents: true,
+          zoom : true, watchOverflow: true,
+          touchRatio: 0.3,
+          slideToClickedSlide: true,
+          freeMode: true,
+          pagination: {
+            el: '.related_control .progressbar',
+            type: 'progressbar',
+          },
+        })
+          .on('slideChange', function (swiper, activeslide, totalslide) {
+            var activeslide = relatedCont.realIndex;
+            var totalslide = $(".related_wrap .swiper-slide").length;
+            $(".related_control p").text((activeslide + 1) + "/" + totalslide);	//현재 페이지수 / 전체 페이지수
+          });
+    
+      } else if (ww >= 740 && relatedCont != undefined) {
+        relatedCont.destroy();
+        relatedCont = undefined;
+      }
+    }
+    relatedSwiper();
+
+    $(window).on('resize', function () {
+      ww = $(window).width();
+      relatedSwiper();
+    });
+    } 
+    detailSwipe();
+
+  // 방송 VOD 다시보기
+  function vodSwipe() {
+    var vodCont = undefined;
+    
+    if ($(".vod_wrap div").length > 0) {
+      $(".vod_control p").text("1/" + $(".vod_wrap .swiper-slide").length);
+    } else {
+      $(".vod_control p").text("0/0");	
+    }
+    var vodCont = new Swiper(".vod_cont", {
+      initialSlide : 1,slidesPerView: 4,slidesPerGroup: 4, spaceBetween: 20, loop: false, grabCursor: true, 
+      navigation: {
+        nextEl: '.sl-nav .swiper-button-next',
+        prevEl: '.sl-nav .swiper-button-prev',
+      },
+      pagination: {
+        el: '.vod_control .progressbar',
+        type: 'progressbar',
+      },
+      breakpoints: {
+        1140: { slidesPerView: 3, slidesPerGroup: 3, spaceBetween: 20 },
+        780:{ slidesPerView: 2 },
+        540: { slidesPerView: 1.2, slidesPerGroup: 1, spaceBetween: 22, touchRatio: 0.3, slideToClickedSlide: true, freeMode: true }
+      },          
+      on: {
+        slideChange: function (swiper, activeslide, totalslide) {
+          var activeslide = vodCont.realIndex;
+          var totalslide = vodCont.slides.length;
+          $(".vod_control p").text((activeslide + 1) + "/" + totalslide);	
+        },
+      },
+    });
+  }
+  vodSwipe();
+
+  //도서상세 - 더보기
+  jQuery(function ($) {
+    var colorbox = $('.info_color .info_data');
+    colorbox.each(function () {
+      $(this).outerHeight();
+      if ($(this).outerHeight() > 36) {
+        $(this).addClass('hidden');
+        var btnMoreCmt = $(this).siblings('.btn-moreInfo');
+        btnMoreCmt.show();
+        btnMoreCmt.on("click", function () {
+          $(this).siblings('.info_data').removeClass('hidden');
+          $(this).remove();
+        });
+      }
+    });
+  });
 
 });

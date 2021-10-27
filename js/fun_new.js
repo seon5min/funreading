@@ -227,7 +227,7 @@ $(function () {
     var target = $('footer').offset().top - windowHeight - stickyElement
     
 
-    if($(window).scrollTop() <= target & $(window).scrollTop() > 420){
+    if($(window).scrollTop() <= target & $(window).scrollTop() > 270){
       $('.sticky-placeholder').css('height', stickyElement)
       $('.sticky').css({
         'position': 'fixed',

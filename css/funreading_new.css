@@ -2017,7 +2017,7 @@ section.eggfun .bt.ico.share.nb {
   display: block;
   position: relative;
   z-index: 0;
-  height: 29.5px;
+  height: 30px;
   background: url(../images/funreading/icon/rating_star_on.png) repeat-x 0 0;
   background-size: contain;
   pointer-events: none;

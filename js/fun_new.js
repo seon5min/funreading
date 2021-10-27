@@ -226,7 +226,8 @@ $(function () {
     var windowHeight = $(this).outerHeight()
     var target = $('footer').offset().top - windowHeight - stickyElement
     
-    if($(window).scrollTop() <= target){
+
+    if($(window).scrollTop() <= target & $(window).scrollTop() > 420){
       $('.sticky-placeholder').css('height', stickyElement)
       $('.sticky').css({
         'position': 'fixed',
@@ -268,8 +269,7 @@ $(function () {
             el: '.related_control .progressbar',
             type: 'progressbar',
           },
-        })
-          .on('slideChange', function (swiper, activeslide, totalslide) {
+        }).on('slideChange', function (swiper, activeslide, totalslide) {
             var activeslide = relatedCont.realIndex;
             var totalslide = $(".related_wrap .swiper-slide").length;
             $(".related_control p").text((activeslide + 1) + "/" + totalslide);	//현재 페이지수 / 전체 페이지수
@@ -325,20 +325,24 @@ $(function () {
   vodSwipe();
 
   //도서상세 - 더보기
-  jQuery(function ($) {
-    var colorbox = $('.info_color .info_data');
-    colorbox.each(function () {
-      $(this).outerHeight();
-      if ($(this).outerHeight() > 36) {
-        $(this).addClass('hidden');
-        var btnMoreCmt = $(this).siblings('.btn-moreInfo');
-        btnMoreCmt.show();
-        btnMoreCmt.on("click", function () {
-          $(this).siblings('.info_data').removeClass('hidden');
-          $(this).remove();
-        });
-      }
-    });
+  var colorbox = $('.info_color .info_data');
+  colorbox.each(function () {
+    var inputLength = $('.info_data').length;
+    if(inputLength < 200){
+      $(".btn-moreInfo").addClass('blind');  
+    }else{
+        return 0;
+    }
+    $(this).outerHeight();
+    if ($(this).outerHeight() > 21) {
+      $(this).addClass('hidden');
+      var btnMoreCmt = $(this).siblings('.btn-moreInfo');
+      btnMoreCmt.show();
+      btnMoreCmt.on("click", function () {
+        $(this).siblings('.info_data').removeClass('hidden');
+        $(this).remove();
+      });
+    }
   });
 
 });

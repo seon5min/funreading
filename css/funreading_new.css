@@ -63,6 +63,9 @@ button.fl_btn .ico_view::after {
 /* ==========================================================================
  LAYOUT
 ========================================================================== */
+.pc_hide {
+  display: none !important;
+}
 /* 메인 슬라이드 */
 .main_banner_wrap {
   position: relative;
@@ -1449,16 +1452,16 @@ body.sub .filter_wrap .filter-box .bt {
   min-height: 480px;
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 80px;
+  padding: 0 38px;
 }
 .detail_visual_wrap .inner .detail_thumbnail {
   width: 100%;
-  min-width: 240px;
+  max-width: 240px;
   height: auto;
   -webkit-box-align: start;
   -ms-flex-align: start;
   align-items: flex-start;
-  margin-top: 68px;
+  margin-top: 60px;
 }
 .detail_visual_wrap .inner .detail_thumbnail img {
   max-width: 100%;
@@ -1467,15 +1470,21 @@ body.sub .filter_wrap .filter-box .bt {
   height: auto;
 }
 .detail_visual_wrap .inner .detail_description {
-  padding: 68px 0;
-  margin-left: 90px;
+  position: relative;
+  padding: 60px 0;
+  margin-left: 53px;
+  width: 100%;
+}
+.detail_visual_wrap .inner .detail_btn {
+  position: absolute;
+  bottom: 60px;
 }
 .detail_description .level {
   display: inline-block;
-  padding-bottom: 16px;
+  padding-bottom: 10px;
   font-weight: 400;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 1.2;
   color: #222;
   letter-spacing: -0.35px;
   text-align: center;
@@ -1498,7 +1507,7 @@ body.sub .filter_wrap .filter-box .bt {
   border-bottom: 1px solid #222;
   padding-bottom: 1px;
   display: inline;
-  font-size: 32px;
+  font-size: 30px;
   line-height: 1.4;
   letter-spacing: -1px;
   font-weight: 600;
@@ -1521,7 +1530,7 @@ body.sub .filter_wrap .filter-box .bt {
 .detail_description .tit_con .subtit {
   display: block;
   display: -webkit-box;
-  font-size: 24px;
+  font-size: 22px;
   margin-top: 14px;
   line-height: 1.2;
   letter-spacing: -1px;
@@ -1530,7 +1539,7 @@ body.sub .filter_wrap .filter-box .bt {
   color: #222;
 }
 .detail_description .sub_con {
-  margin-top: 34px;
+  margin-top: 13px;
 }
 .detail_description .sub_con .txt {
   font-size: 18px;
@@ -1540,9 +1549,9 @@ body.sub .filter_wrap .filter-box .bt {
 }
 .detail_description .sub_con .subtxt {
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.5;
   letter-spacing: -0.45px;
-  margin-top: 8px;
+  margin-top: 10px;
   font-weight: 400;
   color: #222;
   white-space: normal;
@@ -1552,14 +1561,14 @@ body.sub .filter_wrap .filter-box .bt {
   font-size: 14px;
   line-height: 1.2;
   letter-spacing: -0.35px;
-  margin-top: 28px;
+  margin-top: 21px;
   font-weight: 400;
 }
 .detail_description .btn_wrap {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 34px;
+  margin-top: 17px;
 }
 .detail_description .ebook_btn,
 .detail_description .mp3_btn,
@@ -1612,8 +1621,8 @@ body.sub .filter_wrap .filter-box .bt {
 }
 .detail_visual_wrap .bt.ico.share {
   position: absolute;
-  right: 30px;
-  top: 45px;
+  right: -15px;
+  top: 40px;
   background: url(../images/funreading/icon/funreading_share_pc.png) no-repeat
     48% 52%;
   border: 1px solid #222;
@@ -1647,7 +1656,7 @@ section.eggfun .bt.ico.share.nb {
   line-height: 1.33;
   color: #242424;
   letter-spacing: -1.3px;
-  margin: 60px 0 35px;
+  margin: 28px 0 35px;
 }
 .related_wrap > .inner,
 .vod_wrap > .inner,
@@ -1665,7 +1674,6 @@ section.eggfun .bt.ico.share.nb {
   align-items: baseline;
   display: -ms-inline-flexbox;
   display: inline-flex;
-  margin-bottom: 40px;
 }
 .related_wrap .book_list_wrap .control {
   display: none;
@@ -2009,7 +2017,7 @@ section.eggfun .bt.ico.share.nb {
   display: block;
   position: relative;
   z-index: 0;
-  height: 30px;
+  height: 29.5px;
   background: url(../images/funreading/icon/rating_star_on.png) repeat-x 0 0;
   background-size: contain;
   pointer-events: none;
@@ -2518,6 +2526,16 @@ body.sub .fun_review_board .page {
     width: calc(16.8% - 0.6%);
     padding: 0 20px 0 0;
   }
+  .detail_visual_wrap .inner .detail_description {
+    position: initial;
+  }
+  .detail_visual_wrap .inner .detail_btn {
+    position: relative;
+    bottom: 0;
+  }
+  .detail_visual_wrap .bt.ico.share {
+    right: 15px;
+  }
 }
 
 @media only screen and (max-width: 980px) {
@@ -2715,6 +2733,9 @@ body.sub .fun_review_board .page {
 /* Mobile visuals
 ----------------------------------*/
 @media only screen and (max-width: 740px) {
+  .pc_hide {
+    display: block !important;
+  }
   /* top 10, search */
   .recommend_wrap {
     height: 77px;
@@ -3673,6 +3694,9 @@ body.sub .fun_review_board .page {
     width: 42%;
     padding-right: 25px;
   }
+  .vod_wrap {
+    margin-top: 10px;
+  }
   .related_wrap .title,
   .vod_wrap .title {
     margin: 0 0 16px 0;
@@ -3768,7 +3792,7 @@ body.sub .fun_review_board .page {
     font-size: 15px;
     padding-left: 21px;
     height: 36px;
-    width: 104px;
+    width: 80px;
     line-height: 35px;
     font-weight: 500;
     color: #3d3d3d;

@@ -209,26 +209,30 @@
 					</div>
 					<div class="detail_description">
 						<div class="detail_txt">
-							<p class="level">Lv.6<span class="bar_g"></span>비소설</p>
+							<!-- 2021-12-13 수정 -->
+							<div class="level_wrap">
+								<p class="level">Lv.6<span class="bar_g"></span>비소설</p>
+								<button type="button" class="bt ico share bd jq-pop">공유</button>
+							</div>
+							<!-- 2021-12-13 수정 -->
 							<div class="tit_con">
 								<div class="maintit">
 									<p class="tit">George Washington Carver: World-Famous Botanist and Agricultural
 										Inventor 2line none max</p>
-									<a href="#none" class="mob_hide bookmark_ico on">서재담기</a>
+									<a href="#none" class="bookmark_ico">서재담기</a>
 								</div>
 								<p class="subtit">William Shakespeare / Tamara Hollingworth & Harriet Isecke</p>
 							</div>
 							<div class="sub_con">
 								<p class="txt">Summary</p>
 								<div class="info_color">
-									<p class="subtxt info_data">Jules Vernes 의 고전적 공상 과학 소설로, Von Hardwigg 교수, 그의 조카
-										Axel, 그리고 가이드 Hans가 아이슬란드의 분화구를 통해 지구 안으로 들어간다. 지층 아래의 세계를 탐험하면서, 이상하고 신기한 장면들을
-										목격하게 된다. 문자는
-										200바이트 이하로 적어 주세요.이상하고 신기한 장면들을 목격하게 된다</p>
+									<p class="subtxt info_data">Jules Ver드의 nes 의 고전적 공상 과학 소설로, Von Hardwigg 교수, 그의 조카
+										Axel, 그리고 가이드 Hans가 아이슬란분화구를 통해 지구 안으로 들어간다. 지층 아래의 세계를 탐험하면서, 이상하고 신기한 장면들을
+										목격하게 된다. </p>
 									<div class="btn-moreInfo">더보기</div>
 								</div>
 							</div>
-							<button type="button" class="bt ico share bd jq-pop">공유</button>
+
 						</div>
 						<div class="detail_btn">
 							<p class="learning_date">최근 학습일 <span class="date">2021.01.01</span></p>
@@ -238,7 +242,6 @@
 								<a href="#" class="learning_btn" title="learning">learning</a>
 							</div>
 						</div>
-						<a href="#none" class="pc_hide bookmark_ico on">서재담기</a>
 					</div>
 				</div>
 			</div>
@@ -262,7 +265,6 @@
 				</div>
 			</article>
 			<!-- //detail_visual -->
-
 
 			<!-- 연관 도서 추천 -->
 			<div class="related_wrap">
@@ -475,45 +477,34 @@
 											id="totalCnt">200</strong>)</p>
 								</div>
 							</div>
-							<form class="cmt_write_frm" name="cmtFrm" id="cmtFrm" method="POST">
-								<input name="bbsId" value="84000126" type="hidden" />
-								<input name="pstId" id="pstId" value="" type="hidden" />
-								<input name="crtnUserId" id="crtnUserId" value="홍길동" type="hidden" />
-								<input name="pstCrtnUserNm" id="pstCrtnUserNm" value="홍길동" type="hidden" />
-								<input name="snsDsCd" id="snsDsCd" value="" type="hidden" />
-
-								<input name="snsDsNm" id="snsDsNm" value="" type="hidden" />
-								<input name="snsUserId" id="snsUserId" value="" type="hidden" />
-								<input name="snsUserNm" id="snsUserNm" value="" type="hidden" />
-								<input name="snsUserImgeUrl" id="snsUserImgeUrl" value="" type="hidden" />
-								<input name="facebookLinkUrl" id="facebookLinkUrl" value="" type="hidden" />
-								<input name="prsnlInfoStreYn" id="prsnlInfoStreYn" value="" type="hidden" />
-								<input type="hidden" name="boardType" value="13" />
+							<form class="cmt_write_frm" id="cmtFrm">
+								<input type="hidden" name="cmtFrm" value="1">
 								<fieldset>
 									<legend>댓글 입력 폼</legend>
 									<div class="score_rating">
-										<div class="startRadio">
-											<label class="startRadio_box">
-												<input type="radio" name="rating" id="">
-												<span class="startRadio_img"><span class="blind">별 1개</span></span>
-											</label>
-											<label class="startRadio_box">
-												<input type="radio" name="rating" id="">
-												<span class="startRadio_img"><span class="blind">별 2개</span></span>
-											</label>
-											<label class="startRadio_box">
-												<input type="radio" name="rating" id="">
-												<span class="startRadio_img"><span class="blind">별 3개</span></span>
-											</label>
-											<label class="startRadio_box">
-												<input type="radio" name="rating" id="">
-												<span class="startRadio_img"><span class="blind">별 4개</span></span>
-											</label>
-											<label class="startRadio_box">
-												<input type="radio" name="rating" id="">
-												<span class="startRadio_img"><span class="blind">별 5개</span></span>
-											</label>
+										<div class="startRadio" id="_voteButtons">
+											<button type="button" class="bt ico star jq-onoff on"
+												onclick="setSatis(1)">만족</button>
+											<button type="button" class="bt ico star jq-onoff"
+												onclick="setSatis(2)">만족</button>
+											<button type="button" class="bt ico star jq-onoff"
+												onclick="setSatis(3)">만족</button>
+											<button type="button" class="bt ico star jq-onoff"
+												onclick="setSatis(4)">만족</button>
+											<button type="button" class="bt ico star jq-onoff"
+												onclick="setSatis(5)">만족</button>
 										</div>
+										<script>
+											function setSatis(s) {
+												$(".bt.ico.star.jq-onoff").each(function () {
+													$(this).removeClass("on");
+												});
+												for (i = 0; i < s - 1; i++) {
+													$("#_voteButtons button:eq(" + i + ")").addClass("on");
+												}
+												$("#cmtFrm input[name='cmtFrm']").val(s);
+											}
+										</script>
 									</div>
 									<div class="comment_wrap">
 										<span class="cnt_con"><span class="current" id="current">38</span> / 250
@@ -775,10 +766,10 @@
 				<p class="subtxt">“ 현재까지 <span class="emph_sign">1,358명</span>이 읽고있어요 ”</p>
 			</div>
 			<div class="btn_wrap">
-				<a href="#" class="ebook_btn" title="e-Book">e-Book</a>
-				<a href="#" class="mp3_btn" title="mp3">mp3</a>
-				<a href="#" class="bookmark_btn" title="mp3">서재담기</a>
-				<a href="#" class="learning_btn" title="Learning">Learning</a>
+				<a href="#none" class="ebook_btn" title="e-Book">e-Book</a>
+				<a href="#none" class="mp3_btn" title="mp3">mp3</a>
+				<a href="#none" class="bookmark_btn" title="mp3">서재담기</a>
+				<a href="#none" class="learning_btn" title="Learning">Learning</a>
 			</div>
 		</div>
 	</div>

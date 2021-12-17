@@ -889,6 +889,7 @@ body.sub .filter-box .filter .order > div.on:before {
   word-break: keep-all;
 }
 .series_info_thumbs .book_info h2 {
+  display: inline;
   font-size: 26px;
   font-weight: 500;
   letter-spacing: -1.4px;
@@ -1345,6 +1346,9 @@ body.sub .filter_wrap .filter-box .filter {
 }
 body.sub .content .page {
   padding: 20px 0 110px;
+}
+body.sub .content.library .page {
+  padding-top: 100px;
 }
 body.sub .filter_wrap .filter-box .bt {
   height: 37px;
@@ -2617,7 +2621,8 @@ body.sub .fun_review_board .page {
   padding: 5px 10px;
   margin-right: 5px;
 }
-.month_setting_con .reset_btn {
+.month_setting_con .reset_btn,
+.month_setting_con .start_btn {
   margin: 0 30px;
   width: 75px;
   height: 32px;
@@ -2772,6 +2777,9 @@ body.sub .fun_review_board .page {
   color: #222;
   letter-spacing: -0.8px;
 }
+.num_detail_con .reading_count.zero {
+  color: #717171;
+}
 .num_detail_con .highlight {
   font-size: 18px;
   line-height: 1.2;
@@ -2802,9 +2810,7 @@ body.sub .fun_review_board .page {
   -webkit-box-align: end;
   -ms-flex-align: end;
   align-items: flex-end;
-  margin-top: 10px;
-}
-.activities_box .single_chart {
+  margin-top: 15px;
 }
 .study_total .study_tit {
   font-size: 18px;
@@ -2818,6 +2824,14 @@ body.sub .fun_review_board .page {
   -ms-flex-align: end;
   align-items: flex-end;
   margin-right: 10px;
+}
+.study_total .study_btn {
+  width: 75px;
+  height: 32px;
+  background-color: #8790a2;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 16px;
 }
 .study_total .study_tit:before {
   content: "";
@@ -2862,7 +2876,7 @@ body.sub .fun_review_board .page {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin: 52px auto 36px;
+  margin: 53px auto 45px;
 }
 .library > .tabs > li {
   -webkit-flex: 1;
@@ -2897,7 +2911,8 @@ body.sub .fun_review_board .page {
   align-items: flex-end;
   margin-bottom: 30px;
 }
-.mybook_edit .tot_book {
+.mybook_edit .tot_book,
+.nodata_con .tot_book {
   font-size: 18px;
   font-weight: 400;
   letter-spacing: -0.7px;
@@ -2919,6 +2934,7 @@ body.sub .fun_review_board .page {
   background: #fff;
   border: 1px solid #7e7e7e;
   font-size: 18px;
+  font-weight: 300;
   letter-spacing: -0.5px;
   line-height: 1;
   color: #7e7e7e;
@@ -2932,19 +2948,24 @@ body.sub .fun_review_board .page {
 .library .selected_book_del:before {
   content: "";
   display: inline-block;
-
   min-width: 17px;
   min-height: 20px;
-  margin-right: 8px;
+  margin-right: 6px;
 }
 .library .mybook_edit .mybook_list_edit:before {
-  background: url(../images/funreading/icon/edit_list_ico.png) no-repeat 0 2px;
+  background-image: url(../images/funreading/icon/edit_list_ico.png);
+  background-repeat: no-repeat;
+  background-position: 0 1.5px;
 }
 .library .mybook_edit .mybook_del_edit:before {
-  background: url(../images/funreading/icon/edit_del_ico.png) no-repeat 0 2px;
+  background: url(../images/funreading/icon/edit_del_ico.png);
+  background-repeat: no-repeat;
+  background-position: 0 2px;
 }
 .library .selected_book_del:before {
-  background: url(../images/funreading/icon/book_del_ico.png) no-repeat 0 2px;
+  background: url(../images/funreading/icon/book_del_ico.png);
+  background-repeat: no-repeat;
+  background-position: 0 2px;
 }
 .book_info .combo label {
   position: relative;
@@ -2972,19 +2993,104 @@ body.sub .fun_review_board .page {
 .book_info .combo input[type="checkbox"]:checked + label:before {
   background-image: url(../images/funreading/icon/mybook_check_on.png);
 }
-
-.series_info_thumbs .book_info h2 {
-  display: inline;
-}
 .library .my_book_wrap .inner .setting_btn {
   display: none;
 }
 /* 나의서재 탭 */
-
 .my_book_tab {
   display: none;
 }
 
+/* 나의서재 - 전체도서 */
+.content.library .category_wrap {
+  margin: 65px auto 160px;
+}
+.content.library .category_wrap .book_list_wrap {
+  margin: 10px 0 0;
+}
+.content.library .book_list_wrap .combo label {
+  height: auto;
+  padding-left: 0px;
+}
+.content.library .book_list_wrap .combo label:before {
+  top: 16px;
+}
+.content.library
+  .book_list_wrap
+  .combo
+  input[type="checkbox"]:checked
+  + label:before {
+  background-image: url(../images/funreading/icon/mybook_check_on.png);
+}
+.content.library .book_list_wrap .combo .box_lo {
+  width: 27px;
+  display: inline-block;
+  height: 17px;
+}
+.content.library .book_list_wrap li .thumb_book {
+  height: 46px;
+}
+.my_study_con .month_setting_con.month_setting {
+  height: 176px;
+  flex-direction: column;
+  justify-content: center;
+}
+.month_setting_con.month_setting .volume_tit {
+  text-align: center;
+  padding: 0;
+  margin: 0 auto;
+  font-size: 24px;
+  font-weight: 400;
+}
+.month_setting_con.month_setting .challenge_btn {
+  width: 186px;
+  height: 42px;
+  background-color: #f67e27;
+  color: #fff;
+  margin-top: 25px;
+  font-size: 18px;
+  letter-spacing: -0.8px;
+}
+.nodata_con {
+  color: #717171;
+}
+.nodata_con > img {
+  width: 60px;
+  margin: 60px auto 30px;
+  display: block;
+}
+.nodata_con > h2.nodata_tit {
+  font-size: 24px;
+  color: #717171;
+  font-weight: 400;
+}
+.nodata_con p.nodata_txt {
+  display: flex;
+  justify-content: center;
+}
+.nodata_con p.nodata_txt span {
+  font-size: 20px;
+  text-align: center;
+  line-height: 1.5;
+}
+.nodata_con .txt_box {
+  max-width: 500px;
+  width: 100%;
+  margin: 40px auto 0;
+}
+.nodata_con > .nodata_btn {
+  display: block;
+  width: 300px;
+  height: 60px;
+  background-color: #f67e27;
+  color: #fff;
+  margin: 50px auto 0;
+  font-size: 20px;
+  letter-spacing: -0.8px;
+}
+.nodata_con .tot_book {
+  color: #717171;
+}
 /* Media Queries for Responsive Design.
 ----------------------------------------*/
 @media only screen and (max-width: 1140px) {
@@ -3120,6 +3226,14 @@ body.sub .fun_review_board .page {
   }
   .tab_wrap {
     border-radius: 0;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: auto;
+  }
+  .library > .tabs,
+  .mybook_edit {
+    margin-right: 20px;
+    margin-left: 20px;
   }
   .main_banner_wrap .gallery_thumbs {
     max-width: 43vw;
@@ -3179,6 +3293,10 @@ body.sub .fun_review_board .page {
     padding-right: 15px;
     font-size: 18px;
   }
+  .month_setting_con .reset_btn,
+  .month_setting_con .start_btn {
+    margin: 0 15px;
+  }
   .month_setting_con .reset_btn {
     margin: 0 15px;
     width: 70px;
@@ -3227,8 +3345,8 @@ body.sub .fun_review_board .page {
     margin-bottom: 20px;
   }
   .divider {
-    height: 16px;
-    margin: 2px 8px;
+    height: 15px;
+    margin: 2px 7px;
   }
   .study_total .study_tit,
   .study_total .study_tot {
@@ -3236,6 +3354,15 @@ body.sub .fun_review_board .page {
   }
   .study_total .highlight {
     font-size: 24px;
+  }
+  .library .selected_book_del {
+    margin-right: 20px;
+  }
+  body.sub .content.library .page {
+    padding-top: 40px;
+  }
+  .nodata_con {
+    padding: 0 20px;
   }
 }
 
@@ -3478,6 +3605,9 @@ body.sub .fun_review_board .page {
 @media only screen and (max-width: 740px) {
   .pc_hide {
     display: block !important;
+  }
+  body.sub .content .page {
+    display: none;
   }
   /* top 10, search */
   .recommend_wrap {
@@ -4226,19 +4356,9 @@ body.sub .fun_review_board .page {
     padding-right: 0;
   }
   .category_wrap .book_list_wrap li .thumb_book {
-    -webkit-line-clamp: 2;
-    height: 40px;
-    font-weight: 400;
     font-size: 13px;
     line-height: 1.4;
     margin: 10px 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    word-wrap: break-word;
-    white-space: normal;
-    cursor: pointer;
   }
   .category_wrap .book_list_wrap .book_list_thumb {
     margin-left: -8px;
@@ -4800,9 +4920,6 @@ body.sub .fun_review_board .page {
     padding: 4px 12px;
     height: 24px;
   }
-  body.sub .content .page {
-    display: none;
-  }
   .archive_wrap .btn-moreInfo {
     display: block;
     position: relative;
@@ -4979,7 +5096,8 @@ body.sub .fun_review_board .page {
     height: 34px;
     font-size: 20px;
   }
-  .month_setting_con .reset_btn {
+  .month_setting_con .reset_btn,
+  .month_setting_con .start_btn {
     font-size: 14px;
     width: 68px;
     height: 28px;
@@ -5101,56 +5219,175 @@ body.sub .fun_review_board .page {
     font-size: 16px;
     z-index: 1;
   }
-}
-
-@media only screen and (max-width: 600px) {
-  .series_info_thumbs .book_thumbnail {
-    min-width: 33%;
+  .mybook_edit {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 15px;
   }
-  .series_info_thumbs .book_info {
-    max-width: 210px;
+  .library .mybook_edit .mybook_list_edit,
+  .library .mybook_edit .mybook_del_edit {
+    width: 38px;
+    height: 38px;
+    font-size: 0;
+    border: 0;
+    border-radius: 50%;
   }
-  .series_info_thumbs .book_info .book_txt {
-    max-width: 185px;
+  .library .mybook_edit .mybook_list_edit {
+    background-color: #1f3153;
   }
-}
-
-@media only screen and (max-width: 400px) {
-  .book_search .search_bar > input {
-    width: 158px;
+  .library .mybook_edit .mybook_del_edit {
+    background-color: #8790a2;
   }
-  .main-slide-con .summary_description .level:before {
-    top: 0.5px;
+  .library .mybook_edit .mybook_list_edit:before,
+  .library .mybook_edit .mybook_del_edit:before {
+    min-width: 16px;
+    background-size: contain;
+    background-position: 50% 50%;
+    margin: 0;
   }
-  .series_info_thumbs .book_thumbnail {
-    min-width: 125px;
+  .library .mybook_edit .mybook_list_edit:before {
+    background-image: url(../images/funreading/icon/list_edit_btn.png);
   }
-  .series_info_thumbs .book_info h2 {
-    font-size: 15px;
-    max-width: 180px;
-    max-height: 4rem;
+  .library .mybook_edit .mybook_del_edit:before {
+    background-image: url(../images/funreading/icon/del_edit_btn.png);
   }
-  .series_info_thumbs .book_info .book_txt {
+  .mybook_edit .tot_book {
     font-size: 13px;
   }
-  .category_wrap .title_container .title p.main_tit {
-    font-size: 20.5px;
+  .book_info .combo label .box_lo + h2 {
+    display: inline;
   }
-  .category_wrap .title_container .title p.sub_tit {
+  .book_info .combo label:before {
+    top: 3px;
+    width: 20px;
+    height: 20px;
+  }
+  .library .selected_book_del {
+    width: 164px;
+    height: 42px;
+    background-color: #8990a3;
+    border: 0;
+    color: #fff;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+  .library .selected_book_del:before {
+    background: url(../images/funreading/icon/mbook_del_ico.png);
+    background-repeat: no-repeat;
+    background-position: 0 1px;
+    background-size: 14px;
+    margin-right: 5px;
+  }
+  body.sub .content.library .page {
+    display: block;
+    padding-top: 50px;
+  }
+  .content.library .book_list_wrap li .thumb_book {
+    height: 42px;
+    line-height: 1.6;
+  }
+  .content.library .book_list_wrap .combo label:before {
+    top: 12px;
+  }
+  .mob_hide {
+    display: none !important;
+  }
+  .content.library .category_wrap {
+    margin: 42px auto 115px;
+  }
+  .nodata_con .tot_book {
+    font-size: 13px;
+  }
+  .nodata_con > img {
+    margin: 40px auto 20px;
+  }
+  .nodata_con > h2.nodata_tit {
+    font-size: 17px;
+  }
+  .nodata_con p.nodata_txt {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nodata_con p.nodata_txt span {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+  .nodata_con .txt_box {
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto 0;
+  }
+  .nodata_con > .nodata_btn {
+    margin: 35px auto 0;
+    width: 216px;
+    height: 42px;
     font-size: 16px;
   }
 }
 
-@media only screen and (max-width: 375px) {
-  .main-slide-con .summary_description .book_tit > a {
-    overflow: hidden;
-    text-align: center;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-    word-break: break-all;
-    display: block;
-    display: -webkit-box;
-    max-width: 100%;
+  @media only screen and (max-width: 600px) {
+    .series_info_thumbs .book_thumbnail {
+      min-width: 33%;
+    }
+    .series_info_thumbs .book_info {
+      max-width: 210px;
+    }
+    .series_info_thumbs .book_info .book_txt {
+      max-width: 185px;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    .book_search .search_bar > input {
+      width: 158px;
+    }
+    .main-slide-con .summary_description .level:before {
+      top: 0.5px;
+    }
+    .series_info_thumbs .book_thumbnail {
+      min-width: 125px;
+    }
+    .series_info_thumbs .book_info h2 {
+      font-size: 15px;
+      max-width: 180px;
+      max-height: 4rem;
+    }
+    .series_info_thumbs .book_info .book_txt {
+      font-size: 13px;
+    }
+    .category_wrap .title_container .title p.main_tit {
+      font-size: 20.5px;
+    }
+    .category_wrap .title_container .title p.sub_tit {
+      font-size: 16px;
+    }
+    .book_info .combo label:before {
+      top: 5px;
+      background-size: 18px;
+    }
+    .book_info .combo .box_lo {
+      width: 24px;
+    }
+    .book_info .combo label:before {
+      top: 3px;
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  @media only screen and (max-width: 375px) {
+    .main-slide-con .summary_description .book_tit > a {
+      overflow: hidden;
+      text-align: center;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      display: block;
+      display: -webkit-box;
+      max-width: 100%;
+    }
   }
 }

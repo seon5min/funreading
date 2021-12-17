@@ -230,18 +230,6 @@ $(function () {
     $(body).removeClass('bodyscroll');
   });
 
-  $('.setting_btn').on('click', function (e) {
-    e.preventDefault();
-    $('.goal_modal').addClass('goal_modal_opened');
-    $('body').addClass('bodyscroll');
-});
-
-$('.goal_modal_close').on('click', function (e) {
-    e.preventDefault();
-    $('.goal_modal').removeClass('goal_modal_opened');
-    $('body').removeClass('bodyscroll');
-});
-
   // 하단 플로팅 배너
   $(window).scroll(function(){
     var stickyElement = $('.sticky').outerHeight()
@@ -365,17 +353,47 @@ $('.goal_modal_close').on('click', function (e) {
     morebtn();
   });
 
+  // 나의서재 모달
+  $('.setting_btn').on('click', function (e) {
+    e.preventDefault();
+    $('.goal_modal').addClass('goal_modal_opened');
+    $('body').addClass('bodyscroll');
+});
+
+$('.goal_modal_close').on('click', function (e) {
+    e.preventDefault();
+    $('.goal_modal').removeClass('goal_modal_opened');
+    $('body').removeClass('bodyscroll');
+});
+
   // 나의서재 탭
-  
   $('.my_book_tab').click(function () {
     if ($('.my_book_tab').hasClass('show')) {
       $('.my_book_tab').removeClass('show');
       $('.my_book_tab + .tabs').css('display','flex');
+
     }
     else {
       $('.my_book_tab').addClass('show');
       $('.my_book_tab + .tabs').css('display','none');
     }
   });
+  $(window).resize(function () {
+    if ($(window).width() > 740) {
+      $('.my_book_tab + .tabs').css('display','flex');
+    } else {
+      $('.my_book_tab + .tabs').css('display','none');
+    }
+  });
 
+  //나의 독서 활동 - 0%  
+  if ($(".num_detail_con .reading_count").hasClass("zero") === true) {
+    $('.circular_chart .circle').css('stroke', '#ebebeb');
+  } else {
+    $('.circular_chart .circle').css('stroke', '#f57e25');
+  }
+
+  if ($(".study_total button").hasClass("study_btn") === true) {
+    $('.study_total').css('align-items', 'center');
+  }
 });

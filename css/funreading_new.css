@@ -2933,7 +2933,7 @@ body.sub .fun_review_board .page {
   cursor: pointer;
   background: #fff;
   border: 1px solid #7e7e7e;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 300;
   letter-spacing: -0.5px;
   line-height: 1;
@@ -3021,6 +3021,7 @@ body.sub .fun_review_board .page {
   input[type="checkbox"]:checked
   + label:before {
   background-image: url(../images/funreading/icon/mybook_check_on.png);
+  background-size: 18px;
 }
 .content.library .book_list_wrap .combo .box_lo {
   width: 27px;

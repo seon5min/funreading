@@ -2926,21 +2926,18 @@ body.sub .fun_review_board .page {
 .library .mybook_edit .mybook_list_edit,
 .library .mybook_edit .mybook_del_edit,
 .library .selected_book_del {
-  display: -ms-flexbox;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   cursor: pointer;
   background: #fff;
   border: 1px solid #7e7e7e;
   font-size: 16px;
   font-weight: 300;
   letter-spacing: -0.5px;
-  line-height: 1;
   color: #7e7e7e;
   text-align: center;
   width: 176px;
   height: 40px;
+  line-height: 1.4;
   margin-left: auto;
 }
 .library .mybook_edit .mybook_list_edit:before,
@@ -2951,21 +2948,23 @@ body.sub .fun_review_board .page {
   min-width: 17px;
   min-height: 20px;
   margin-right: 6px;
+
+  vertical-align: middle;
+
 }
 .library .mybook_edit .mybook_list_edit:before {
   background-image: url(../images/funreading/icon/edit_list_ico.png);
   background-repeat: no-repeat;
-  background-position: 0 1.5px;
+  background-position: 0 -.5px;
 }
 .library .mybook_edit .mybook_del_edit:before {
   background: url(../images/funreading/icon/edit_del_ico.png);
   background-repeat: no-repeat;
-  background-position: 0 2px;
 }
 .library .selected_book_del:before {
   background: url(../images/funreading/icon/book_del_ico.png);
   background-repeat: no-repeat;
-  background-position: 0 2px;
+  background-position: 0 .5px;
 }
 .book_info .combo label {
   position: relative;
@@ -3028,9 +3027,10 @@ body.sub .fun_review_board .page {
   display: inline-block;
   height: 17px;
 }
-.content.library .book_list_wrap li .thumb_book {
-  height: 46px;
+.content.library .book_list_wrap .book_list_thumb li > .combo {
+  display: none;
 }
+
 .my_study_con .month_setting_con.month_setting {
   height: 176px;
   flex-direction: column;
@@ -3092,6 +3092,7 @@ body.sub .fun_review_board .page {
 .nodata_con .tot_book {
   color: #717171;
 }
+
 /* Media Queries for Responsive Design.
 ----------------------------------------*/
 @media only screen and (max-width: 1140px) {

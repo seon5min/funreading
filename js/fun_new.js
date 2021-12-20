@@ -371,7 +371,6 @@ $('.goal_modal_close').on('click', function (e) {
     if ($('.my_book_tab').hasClass('show')) {
       $('.my_book_tab').removeClass('show');
       $('.my_book_tab + .tabs').css('display','flex');
-
     }
     else {
       $('.my_book_tab').addClass('show');
@@ -396,4 +395,24 @@ $('.goal_modal_close').on('click', function (e) {
   if ($(".study_total button").hasClass("study_btn") === true) {
     $('.study_total').css('align-items', 'center');
   }
+
+  // 편집 버튼 클릭 시
+  if ($('.mybook_edit').hasClass('mybook_list_edit')) {
+    $('.mybook_del_edit').show();
+  } else {
+    $('.mybook_del_edit').hide();
+  }
+  $('.mybook_list_edit').click(function () {
+    $('.content.library .book_list_wrap .book_list_thumb li > .combo').css('display','block');
+    $('.content.library .book_list_wrap li > .thumb_book').hide();
+    $(this).hide();
+    $('.mybook_del_edit').css('display','block');
+  });
+  $('.mybook_del_edit').click(function () {
+    $('.content.library .book_list_wrap li > .thumb_book').css('display','block');
+    $('.content.library .book_list_wrap .book_list_thumb li > .combo').hide();
+    $(this).hide();
+    $('.mybook_list_edit').css('display','block');
+  });
+    
 });

@@ -399,20 +399,29 @@ $('.goal_modal_close').on('click', function (e) {
   // 편집 버튼 클릭 시
   if ($('.mybook_edit').hasClass('mybook_list_edit')) {
     $('.mybook_del_edit').show();
+    $('.selected_book_del').show();
   } else {
     $('.mybook_del_edit').hide();
+    $('.selected_book_del').hide();
   }
+
   $('.mybook_list_edit').click(function () {
     $('.content.library .book_list_wrap .book_list_thumb li > .combo').css('display','block');
     $('.content.library .book_list_wrap li > .thumb_book').hide();
+    $('.content.library .series_info_thumbs .book_info > .combo').css('display','block');
+    $('.content.library .series_info_thumbs .book_info > h2').hide();
     $(this).hide();
     $('.mybook_del_edit').css('display','block');
+    $('.selected_book_del').css('display','block');
   });
   $('.mybook_del_edit').click(function () {
     $('.content.library .book_list_wrap li > .thumb_book').css('display','block');
     $('.content.library .book_list_wrap .book_list_thumb li > .combo').hide();
+    $('.content.library .series_info_thumbs .book_info > h2').css('display','block');
+    $('.content.library .series_info_thumbs .book_info > .combo').hide();
     $(this).hide();
     $('.mybook_list_edit').css('display','block');
+    $('.selected_book_del').css('display','none');
   });
-    
+
 });

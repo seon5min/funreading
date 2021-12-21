@@ -193,7 +193,7 @@ button.fl_btn .ico_view::after {
   background-color: #222;
 }
 .main-slide-con .summary_title .series_subtit {
-  font-size: 28px;
+  font-size: 23px;
   font-weight: 600;
   letter-spacing: -0.5px;
   color: #222;
@@ -299,19 +299,8 @@ button.fl_btn .ico_view::after {
   background-color: #ff9154;
 }
 /* .main_banner_wrap
-  .gallery_thumbs
-  .swiper-slide-thumb-active.swiper-slide-visible {
-  -webkit-transition: all 0.35s linear;
-  -moz-transition: all 0.35s linear;
-  -o-transition: all 0.35s linear;
-  transition: all 0.35s linear;
-  -ms-transition: all 0.35s linear;
-  -webkit-transform: translateY(-10px);
-  -moz-transform: translateY(-10px);
-  -ms-transform: translateY(-10px);
-  -o-transform: translateY(-10px);
-  transform: translateY(-10px);
-} */
+ .gallery_thumbs
+ .swiper-slide-thumb-active.swiper-slide-visible { -webkit-transition: all 0.35s linear; -moz-transition: all 0.35s linear; -o-transition: all 0.35s linear; transition: all 0.35s linear; -ms-transition: all 0.35s linear; -webkit-transform: translateY(-10px); -moz-transform: translateY(-10px); -ms-transform: translateY(-10px); -o-transform: translateY(-10px); transform: translateY(-10px); } */
 .main_banner_wrap
   .gallery_thumbs
   .swiper-slide-thumb-active.swiper-slide-visible:not(.swiper-slide-duplicate):not(.swiper-slide-duplicate-prev):not(.swiper-slide-duplicate-active) {
@@ -412,7 +401,7 @@ button.fl_btn .ico_view::after {
   line-height: 1.4;
   vertical-align: middle;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 13px;
   font-weight: 400;
   letter-spacing: -0.5px;
 }
@@ -499,7 +488,7 @@ button.fl_btn .ico_view::after {
   width: 150px;
   vertical-align: middle;
   color: #222;
-  font-size: 0.8rem;
+  font-size: 13px;
   margin-left: 10px;
   line-height: 1.5;
 }
@@ -895,7 +884,6 @@ body.sub .filter-box .filter .order > div.on:before {
   letter-spacing: -1.4px;
   text-align: left;
   line-height: 1.4;
-  margin-top: 2px;
   color: #222;
   max-height: 7.25rem;
   height: auto;
@@ -1543,7 +1531,7 @@ body.sub .filter_wrap .filter-box .bt {
   display: -webkit-box;
   font-size: 22px;
   margin-top: 14px;
-  line-height: 1.2;
+  line-height: 1.4;
   letter-spacing: -1px;
   font-weight: 500;
   max-width: 100%;
@@ -1873,6 +1861,7 @@ section.eggfun .bt.ico.share.nb {
   font-size: 19px;
   font-weight: 500;
   letter-spacing: -0.05em;
+  line-height: 1.35;
 }
 .vod_wrap .swiper-slide .cate {
   float: right;
@@ -2948,14 +2937,12 @@ body.sub .fun_review_board .page {
   min-width: 17px;
   min-height: 20px;
   margin-right: 6px;
-
   vertical-align: middle;
-
 }
 .library .mybook_edit .mybook_list_edit:before {
   background-image: url(../images/funreading/icon/edit_list_ico.png);
   background-repeat: no-repeat;
-  background-position: 0 -.5px;
+  background-position: 0 -0.5px;
 }
 .library .mybook_edit .mybook_del_edit:before {
   background: url(../images/funreading/icon/edit_del_ico.png);
@@ -2964,7 +2951,7 @@ body.sub .fun_review_board .page {
 .library .selected_book_del:before {
   background: url(../images/funreading/icon/book_del_ico.png);
   background-repeat: no-repeat;
-  background-position: 0 .5px;
+  background-position: 0 0.5px;
 }
 .book_info .combo label {
   position: relative;
@@ -3002,7 +2989,7 @@ body.sub .fun_review_board .page {
 
 /* 나의서재 - 전체도서 */
 .content.library .category_wrap {
-  margin: 65px auto 160px;
+  margin: 65px auto 30px;
 }
 .content.library .category_wrap .book_list_wrap {
   margin: 10px 0 0;
@@ -3027,7 +3014,8 @@ body.sub .fun_review_board .page {
   display: inline-block;
   height: 17px;
 }
-.content.library .book_list_wrap .book_list_thumb li > .combo {
+.content.library .book_list_wrap .book_list_thumb li > .combo,
+.content.library .series_info_thumbs .book_info > .combo {
   display: none;
 }
 
@@ -3054,6 +3042,7 @@ body.sub .fun_review_board .page {
 }
 .nodata_con {
   color: #717171;
+  margin-bottom: 150px;
 }
 .nodata_con > img {
   width: 60px;
@@ -3365,6 +3354,7 @@ body.sub .fun_review_board .page {
   }
   .nodata_con {
     padding: 0 20px;
+    margin-bottom: 120px;
   }
 }
 
@@ -4097,10 +4087,6 @@ body.sub .fun_review_board .page {
     width: 100%;
   }
   .series_slide_wrap .series_info_thumbs {
-    max-width: 1140px;
-    width: 100%;
-    overflow: hidden;
-    margin: 0 auto;
     padding: 0 17px;
   }
   .series_info_thumbs .book_thumbnail {
@@ -4203,7 +4189,8 @@ body.sub .fun_review_board .page {
   .series_book_slider .swiper-slide {
     width: 35% !important;
   }
-  .series_slide_wrap .thumb_book {
+  .series_slide_wrap .thumb_book,
+  .related_wrap .book_list_wrap .thumb_book {
     font-size: 14px;
     line-height: 1.5;
     margin: 10px 0;
@@ -4325,7 +4312,7 @@ body.sub .fun_review_board .page {
     height: 32px;
     text-align: center;
     line-height: 2.5;
-    font-size: 12px;
+    font-size: 13px;
     color: #7e7e7e;
     background-color: #f2f2f2;
     font-weight: 300;
@@ -4358,7 +4345,7 @@ body.sub .fun_review_board .page {
     padding-right: 0;
   }
   .category_wrap .book_list_wrap li .thumb_book {
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
     margin: 10px 0;
   }
@@ -4443,14 +4430,13 @@ body.sub .fun_review_board .page {
     padding-top: 36px;
   }
   .detail_description .tit {
-    font-size: 18px;
+    font-size: 20px;
     border-bottom: none;
-    line-height: 1.5;
+    line-height: 1.4;
   }
   .detail_description .tit_con .subtit {
-    font-size: 14px;
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: -0.7px;
   }
   .detail_description .tit_con .maintit .bookmark_ico.on {
@@ -4466,9 +4452,6 @@ body.sub .fun_review_board .page {
   }
   .detail_description .sub_con {
     margin-top: 26px;
-  }
-  .detail_description .sub_con .txt {
-    font-size: 13.5px;
   }
   .detail_description .btn_wrap {
     margin: 0;
@@ -4569,7 +4552,7 @@ body.sub .fun_review_board .page {
     padding: 0 0 30px;
   }
   .vod_wrap .swiper-slide .vod_card_wrap {
-    box-shadow: 1px 13px 12px rgb(0 0 0 / 10%);
+    box-shadow: 1px 2px 4px rgb(0 0 0 / 3%);
   }
   .vod_wrap .sl-nav {
     display: none;
@@ -4595,7 +4578,7 @@ body.sub .fun_review_board .page {
     border-top: 1px solid #222222;
     border-bottom: 1px solid #222222;
     padding: 10px 0;
-    font-size: 20px;
+    font-size: 24px;
   }
   .fun_review_board .fun_review_title .info_score {
     -webkit-box-orient: vertical;
@@ -4888,25 +4871,25 @@ body.sub .fun_review_board .page {
     padding: 33px 17px;
   }
   .archive_list .archive_list_wrap .subject_eng {
-    font-size: 18px;
+    font-size: 20px;
     margin-bottom: 19px;
     letter-spacing: -0.45px;
   }
   .archive_list .archive_list_wrap .subject_kor {
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: -0.35px;
     margin-bottom: 20px;
   }
   .archive_list li .archive_list_wrap .book_info {
-    font-size: 13.5px;
+    font-size: 14px;
     margin-bottom: 19px;
     letter-spacing: -0.325px;
   }
   .archive_list li .archive_list_wrap .book_detail {
     -webkit-line-clamp: 5;
-    max-height: 90px;
+    max-height: 95px;
     height: auto;
-    font-size: 13px;
+    font-size: 14px;
     line-height: 1.4;
     margin-bottom: 33px;
     color: #222;
@@ -5296,7 +5279,7 @@ body.sub .fun_review_board .page {
     display: none !important;
   }
   .content.library .category_wrap {
-    margin: 42px auto 115px;
+    margin: 42px auto 25px;
   }
   .nodata_con .tot_book {
     font-size: 13px;
@@ -5329,67 +5312,67 @@ body.sub .fun_review_board .page {
   }
 }
 
-  @media only screen and (max-width: 600px) {
-    .series_info_thumbs .book_thumbnail {
-      min-width: 33%;
-    }
-    .series_info_thumbs .book_info {
-      max-width: 210px;
-    }
-    .series_info_thumbs .book_info .book_txt {
-      max-width: 185px;
-    }
+@media only screen and (max-width: 600px) {
+  .series_info_thumbs .book_thumbnail {
+    min-width: 33%;
+    max-width: 40%;
   }
-
-  @media only screen and (max-width: 400px) {
-    .book_search .search_bar > input {
-      width: 158px;
-    }
-    .main-slide-con .summary_description .level:before {
-      top: 0.5px;
-    }
-    .series_info_thumbs .book_thumbnail {
-      min-width: 125px;
-    }
-    .series_info_thumbs .book_info h2 {
-      font-size: 15px;
-      max-width: 180px;
-      max-height: 4rem;
-    }
-    .series_info_thumbs .book_info .book_txt {
-      font-size: 13px;
-    }
-    .category_wrap .title_container .title p.main_tit {
-      font-size: 20.5px;
-    }
-    .category_wrap .title_container .title p.sub_tit {
-      font-size: 16px;
-    }
-    .book_info .combo label:before {
-      top: 5px;
-      background-size: 18px;
-    }
-    .book_info .combo .box_lo {
-      width: 24px;
-    }
-    .book_info .combo label:before {
-      top: 3px;
-      width: 18px;
-      height: 18px;
-    }
+  .series_info_thumbs .book_info {
+    max-width: 210px;
   }
+  .series_info_thumbs .book_info .book_txt {
+    max-width: 185px;
+  }
+}
 
-  @media only screen and (max-width: 375px) {
-    .main-slide-con .summary_description .book_tit > a {
-      overflow: hidden;
-      text-align: center;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      text-overflow: ellipsis;
-      word-break: break-all;
-      display: block;
-      display: -webkit-box;
-      max-width: 100%;
-    }
+@media only screen and (max-width: 400px) {
+  .book_search .search_bar > input {
+    width: 158px;
+  }
+  .main-slide-con .summary_description .level:before {
+    top: 0.5px;
+  }
+  .series_info_thumbs .book_thumbnail {
+    min-width: 125px;
+  }
+  .series_info_thumbs .book_info h2 {
+    font-size: 15px;
+    max-width: 180px;
+    max-height: 4rem;
+  }
+  .series_info_thumbs .book_info .book_txt {
+    font-size: 13px;
+  }
+  .category_wrap .title_container .title p.main_tit {
+    font-size: 20.5px;
+  }
+  .category_wrap .title_container .title p.sub_tit {
+    font-size: 16px;
+  }
+  .book_info .combo label:before {
+    top: 5px;
+    background-size: 18px;
+  }
+  .book_info .combo .box_lo {
+    width: 24px;
+  }
+  .book_info .combo label:before {
+    top: 3px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .main-slide-con .summary_description .book_tit > a {
+    overflow: hidden;
+    text-align: center;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: block;
+    display: -webkit-box;
+    max-width: 100%;
   }
 }

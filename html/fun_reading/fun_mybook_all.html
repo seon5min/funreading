@@ -19,6 +19,8 @@
     <script src="../../js/common_new2020.js"></script>
     <script src="../../js/slick.js"></script>
     <script src="../../js/wow.js"></script>
+    <script src="../../js/swiper/swiper.min.js"></script>
+    <script src="../../js/fun_new.js"></script>
 </head>
 
 <body class="sub">
@@ -203,80 +205,124 @@
         <div class="content library">
             <!-- 나의 서재 활동 -->
             <div class="my_book_wrap">
-                <div class="inner">
-                    <h2>나의 서재</h2>
-                    <button type="button" class="setting_btn"></button>
-                    <div class="my_study_con">
-                        <div class="goal_modal">
-                            <div class="goal_overlay">
-                                <div class="study_goal">
-                                    <div class="month_setting_con">
-                                        <p class="volume_tit">월별 학습목표 설정</p>
-                                        <button class="goal_modal_close"></button>
-                                        <div class="volume_con">
-                                            <p class="volume_number"><span class="num_box">150</span>권</p>
-                                            <!-- 시작버튼 : 0권 / 초기화버튼 : n권  -->
-                                            <!-- 시작버튼 / 초기화버튼 -->
-                                            <!-- <button class="start_btn">시작</button> -->
-                                            <button class="reset_btn">초기화</button>
-                                            <!-- //시작버튼 / 초기화버튼 -->
+                <form name="funForm" id="funForm">
+                    <div class="inner">
+                        <h2>나의 서재</h2>
+                        <button type="button" class="setting_btn"></button>
+                        <div class="my_study_con">
+                            <div id="monthlyGoalView">
+                                <!-- 시작 pc 버전 -->
+                                <div class="goal_modal mob_hide" id="goalStartPc">
+                                    <div class="goal_overlay">
+                                        <div class="study_goal">
+                                            <div class="month_setting_con">
+                                                <p class="volume_tit">월별 학습목표 설정</p>
+                                                <button class="goal_modal_close"></button>
+                                                <div class="volume_con">
+                                                    <!-- 12-29 input 추가 -->
+                                                    <form>
+                                                        <p class="volume_number">
+                                                            <input type="text" name="goal_num" class="num_box"
+                                                                placeholder="0">
+                                                            권
+                                                        </p>
+                                                    </form>
+                                                    <!-- //12-29 input 추가 -->
+                                                    <!-- 시작버튼 : 0권 / 초기화버튼 : n권  -->
+                                                    <!-- 시작버튼 / 초기화버튼 -->
+                                                    <button class="start_btn"
+                                                        onclick="javascript:fn_start_btn_pc();">시작</button>
+                                                    <!-- <button class="reset_btn">초기화</button> -->
+                                                    <!-- //시작버튼 / 초기화버튼 -->
+                                                </div>
+                                            </div>
+                                            <ul>
+                                                <li>매월 1일 설정한 목표 권수와 나의 학습 활동 &gt; 월간 완독목표가 초기화 됩니다.</li>
+                                                <!-- 시작 버튼일 시 -->
+                                                <!-- <li>목표 권수를 변경하려면, 초기화 버튼을 눌러서 새로운 목표 권수를 설정하세요.</li> -->
+                                            </ul>
                                         </div>
                                     </div>
-                                    <ul>
-                                        <li>매월 1일 설정한 목표 권수와 나의 학습 활동 > 월간 완독목표가 초기화 됩니다.</li><!-- 시작 버튼일 시 -->
-                                        <li>목표 권수를 변경하려면, 초기화 버튼을 눌러서 새로운 목표 권수를 설정하세요.</li>
-                                    </ul>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="study_activities">
-                            <div class="activities_con">
-                                <p>나의 독서 활동</p>
-                                <div class="activities_box">
-                                    <div class="single_chart">
-                                        <svg viewBox="0 0 38 38" class="circular_chart">
-                                            <path class="circle_bg" d="M19 3.0845
-                                                a 15.9155 15.9155 0 0 1 0 31.831
-                                                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-                                            <path class="circle" stroke-dasharray="26, 100" d="M19 3.0845
-                                                a 15.9155 15.9155 0 0 1 0 31.831
-                                                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
-                                            <!-- stroke-dasharray="30, 100" n/100 -->
-                                            <text x="19.5" y="22" class="percentage">26<tspan class="per">%</tspan>
-                                            </text>
-                                        </svg>
+                                <!-- //시작 pc 버전 -->
+
+                                <!-- 모바일 버전 -->
+                                <div class="goal_modal pc_hide">
+                                    <div class="goal_overlay">
+                                        <div class="study_goal">
+                                            <div class="month_setting_con">
+                                                <p class="volume_tit">월별 학습목표 설정</p>
+                                                <button class="goal_modal_close"></button>
+                                                <div class="volume_con">
+                                                    <p class="volume_number"><span class="num_box">0</span>권</p>
+                                                    <!-- 시작버튼 : 0권 / 초기화버튼 : n권  -->
+                                                    <!-- 시작버튼 / 초기화버튼 -->
+                                                    <button class="start_btn"
+                                                        onclick="javascript:fn_start_btn_mob();">시작</button>
+                                                    <!-- <button class="reset_btn">초기화</button> -->
+                                                    <!-- //시작버튼 / 초기화버튼 -->
+                                                </div>
+                                            </div>
+                                            <ul>
+                                                <li>매월 1일 설정한 목표 권수와 나의 학습 활동 &gt; 월간 완독목표가 초기화 됩니다.</li>
+                                                <!-- 시작 버튼일 시 -->
+                                                <!-- <li>목표 권수를 변경하려면, 초기화 버튼을 눌러서 새로운 목표 권수를 설정하세요.</li> -->
+                                            </ul>
+                                        </div>
                                     </div>
-                                    <div class="num_detail_con">
-                                        <div class="today_reading">
-                                            <p class="reading_tit">오늘 완독수</p>
-                                            <span class="dotted-line"></span>
-                                            <p class="reading_count highlight"><span>3562</span>권</p>
+                                </div>
+                                <!-- //모바일 버전 -->
+                            </div>
+                            <div class="study_activities">
+                                <div class="activities_con">
+                                    <p>나의 독서 활동</p>
+                                    <div class="activities_box">
+                                        <div class="single_chart">
+                                            <svg viewBox="0 0 38 38" class="circular_chart">
+                                                <path class="circle_bg" d="M19 3.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                                                <path class="circle" stroke-dasharray="100, 100" d="M19 3.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831"></path>
+                                                <!-- stroke-dasharray="30, 100" n/100 -->
+                                                <text x="19.5" y="22" class="percentage">26<tspan class="per">%</tspan>
+                                                </text>
+                                            </svg>
                                         </div>
-                                        <div class="week_reading">
-                                            <p class="reading_tit">주간 평균 완독수</p>
-                                            <span class="dotted-line"></span>
-                                            <p class="reading_count"><span>1114</span>권</p>
-                                        </div>
-                                        <div class="month_reading">
-                                            <p class="reading_tit">월간 완독 목표</p>
-                                            <span class="dotted-line"></span>
-                                            <div class="reading_count">
-                                                <p class="highlight"><span>830</span>권</p><span class="divider"></span>
-                                                <p class="reading_tot">
-                                                    <span>780</span>권
-                                                </p>
+                                        <div class="num_detail_con">
+                                            <div class="today_reading">
+                                                <p class="reading_tit">오늘 완독수</p>
+                                                <span class="dotted-line"></span>
+                                                <p class="reading_count highlight"><span>3562</span>권</p>
+                                            </div>
+                                            <div class="week_reading">
+                                                <p class="reading_tit">주간 평균 완독수</p>
+                                                <span class="dotted-line"></span>
+                                                <p class="reading_count"><span>1114</span>권</p>
+                                            </div>
+                                            <div class="month_reading">
+                                                <p class="reading_tit">월간 완독 목표</p>
+                                                <span class="dotted-line"></span>
+                                                <div class="reading_count">
+                                                    <p class="highlight"><span>830</span>권</p><span
+                                                        class="divider"></span>
+                                                    <p class="reading_tot">
+                                                        <span>780</span>권
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="study_total">
+                            <p class="study_tit on">읽은 도서 총 합계</p>
+                            <p class="study_tot"><span class="highlight">78272</span>권</p>
+                        </div>
                     </div>
-                    <div class="study_total">
-                        <p class="study_tit on">읽은 도서 총 합계</p>
-                        <p class="study_tot"><span class="highlight">78272</span>권</p>
-                    </div>
-                </div>
+                </form>
             </div>
             <!-- //나의 서재 활동 -->
 
@@ -285,7 +331,8 @@
                 <span class="tab_title">전체</span>
                 <span class="tab_arrow"></span>
             </div>
-            <ul class="tabs">
+            <!-- 12-29 클래스명 변경 -->
+            <ul class="book_tabs">
                 <li class="on">
                     <p>전체</p>
                 </li>
@@ -299,22 +346,23 @@
                     <p>다 읽은 책</p>
                 </li>
             </ul>
+            <!-- //12-29 클래스명 변경 -->
             <!-- //나의 서재 탭 -->
 
             <!-- category TAB -->
             <div class="tab_wrap">
                 <ul class="tabs">
-                    <li><a title="전체도서" href="fun_all.html" class="all_category"><span>전체도서</span></a>
+                    <li><a title="전체도서" href="#none" class="all_category"><span>전체도서</span></a>
                     </li>
-                    <li class="on"><a title="시리즈" href="fun_main.html" class="series_category"><span>시리즈</span></a>
+                    <li class="on"><a title="시리즈" href="#none" class="series_category"><span>시리즈</span></a>
                     </li>
-                    <li><a title="소설" href="fun_novel.html" class="novel_category"><span>소설</span></a>
+                    <li><a title="소설" href="#none" class="novel_category"><span>소설</span></a>
                     </li>
-                    <li><a title="비소설" href="fun_nonfiction.html" class="nonfiction_category"><span>비소설</span></a>
+                    <li><a title="비소설" href="#none" class="nonfiction_category"><span>비소설</span></a>
                     </li>
-                    <li><a title=" 피닉스" href="fun_phoenix.html" class="phoenix_category"><span>피닉스</span></a>
+                    <li><a title=" 피닉스" href="#none" class="phoenix_category"><span>피닉스</span></a>
                     </li>
-                    <li><a title=" 만화" href="fun_cartoon.html" class="cartoon_category"><span>만화</span></a>
+                    <li><a title=" 만화" href="#none" class="cartoon_category"><span>만화</span></a>
                     </li>
                 </ul>
             </div>
@@ -1206,11 +1254,6 @@
         </div>
     </footer>
     <!--//푸터-->
-    <!-- funreading swiper -->
-    <script src="../../js/swiper/swiper.js" defer></script>
-    <script src="../../js/swiper/swiper.min.js" defer></script>
-    <script src="../../js/fun_new.js" defer></script>
-    <!-- //funreading swiper -->
 </body>
 
 </html>

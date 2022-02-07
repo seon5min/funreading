@@ -1,12 +1,10 @@
 $(function () {
-  //메인 배너
+  //메인 슬라이드
   var galleryThumbsMain = new Swiper('.gallery_thumbs', {
     spaceBetween: 5,
     slidesPerView: 6,
     loop: true,
     loopedSlides: 6,
-    touchRatio: 0.3,
-    autoHeight: true,
     slideToClickedSlide : true,
     watchOverflow: true,
     watchSlidesVisibility: true,
@@ -49,14 +47,14 @@ $(function () {
       },
   });
 
-  galleryTopMain.on('slideChangeTransitionStart', function() {
+  galleryTopMain.on('slideChange', function() {
     galleryThumbsMain.slideTo(galleryTopMain.activeIndex);
   });
 
-  galleryThumbsMain.on('transitionStart', function(){
+  galleryThumbsMain.on('slideChange', function(){
     galleryTopMain.slideTo(galleryThumbsMain.activeIndex);
   });
-
+  
   // 인기도서 TOP10
   var rankSwiper = new Swiper(".topten", {
     direction: 'vertical',
@@ -75,6 +73,11 @@ $(function () {
 
   $(".topten .ico_arrow").on('click', function (e) {
     $('.topten').addClass('list_open');
+    $('.radio').removeClass('radio_open');
+    $('.recommend_wrap .top_container').removeClass('label_triangle');
+    if ($('.m_label_arrow').css({ 'transform': 'rotate(180deg)'}, 5000)) {
+      $('.m_label_arrow').css({ 'transform': 'rotate(0deg)'}, 5000)
+    }
     rankSwiper.slideTo(1, 0, false);
     rankSwiper.autoplay.stop();
     return false;
@@ -82,28 +85,81 @@ $(function () {
 
   $(".book_topten .m_ico_arrow").on('click', function (e) {
     $('.topten').addClass('list_open');
-    $('.recommend_wrap .top_container').addClass('triangle');
-    $(".book_topten .m_ico_arrow").stop().css({ 'transform': 'rotate(180deg)' }, 5000);
+    $('.radio').removeClass('radio_open');
+    $('.recommend_wrap .top_container').removeClass('label_triangle').addClass('triangle');
+    $(".book_topten .m_ico_arrow").stop().css({ 'transform': 'rotate(180deg)'}, 5000);
+    if ($('.m_label_arrow').css({ 'transform': 'rotate(180deg)'}, 5000)) {
+      $('.m_label_arrow').css({ 'transform': 'rotate(0deg)'}, 5000)
+    }
     rankSwiper.slideTo(1, 0, false);
     rankSwiper.autoplay.stop();
+    return false;
+  });
+
+  $(".m_label_arrow").on('click', function (e) {
+    $('.radio').addClass('radio_open');
+    $('.topten').removeClass('list_open');
+    $('.recommend_wrap .top_container').removeClass('triangle').addClass('label_triangle');
+    $(".m_label_arrow").stop().css({ 'transform': 'rotate(180deg)'}, 5000);
+    if ($('.book_topten .m_ico_arrow').css({ 'transform': 'rotate(180deg)'}, 5000)) {
+      $('.book_topten .m_ico_arrow').css({ 'transform': 'rotate(0deg)'}, 5000)
+    }
     return false;
   });
 
   $(".rank_list_close").on('click', function (e) {
     $('.topten').removeClass('list_open');
     $('.recommend_wrap .top_container').removeClass('triangle');
-    $(".book_topten .m_ico_arrow").stop().css({ 'transform': 'rotate(360deg)', "top": "1px" }, 1000);
+    $(".book_topten .m_ico_arrow").stop().css({ 'transform': 'rotate(0deg)', "top": "1px"}, 1000);
     rankSwiper.slideTo(1, 0, false);
     rankSwiper.autoplay.start();
     return false;
   });
 
+  $(".radio_close").on('click', function (e) {
+    $('.radio').removeClass('radio_open');
+    $('.recommend_wrap .top_container').removeClass('label_triangle');
+    $(".m_label_arrow").stop().css({ 'transform': 'rotate(0deg)'}, 1000);
+    return false;
+  });
+
+
+  function labelbtn() { 
+    var off = $('#off');
+    var on = $('#on');
+    var radio = $('.radio');
+    var placeholder = $(".search_bar > input");
+
+    off.on('click', function (e) {
+      radio.addClass('off');
+      radio.removeClass('on');
+      placeholder.attr("placeholder", "시리즈명을 입력해주세요");
+    });
+    on.on('click', function (e) {
+      radio.addClass('on');
+      radio.removeClass('off');
+      placeholder.attr("placeholder", "도서명을 입력해주세요");
+    });
+  }
+  labelbtn();
+
+
   // 탭
-  $('.tabs li').on('click', function (e) {
-    $('.tabs li').removeClass('on');
+  $('.book_tabs li').on('click', function (e) {
+    $('.book_tabs li').removeClass('on');
     $(this).addClass('on');
   });
 
+  $('.tab_wrap > .tabs li').on('click', function (e) {
+    $('.tab_wrap .tabs li').removeClass('on');
+    $(this).addClass('on');
+  });
+
+  $('.category_wrap > .tabs li').on('click', function (e) {
+    $('.category_wrap .tabs li').removeClass('on');
+    $(this).addClass('on');
+  });
+  
   // 인기순, 최신순
   $('.filter-box .order > div').on('click', function (e) {
     e.preventDefault();
@@ -236,7 +292,6 @@ $(function () {
     var windowHeight = $(this).outerHeight()
     var target = $('footer').offset().top - windowHeight - stickyElement
 
-
     if($(window).scrollTop() <= target & $(window).scrollTop() > 270){
       $('.sticky-placeholder').css('height', stickyElement)
       $('.sticky').css({
@@ -358,42 +413,40 @@ $(function () {
     e.preventDefault();
     $('.goal_modal').addClass('goal_modal_opened');
     $('body').addClass('bodyscroll');
-});
+  });
 
-$('.goal_modal_close').on('click', function (e) {
-    e.preventDefault();
-    $('.goal_modal').removeClass('goal_modal_opened');
-    $('body').removeClass('bodyscroll');
-});
+  $('.goal_modal_close').on('click', function (e) {
+      e.preventDefault();
+      $('.goal_modal').removeClass('goal_modal_opened');
+      $('body').removeClass('bodyscroll');
+  });
 
   // 나의서재 탭
   $('.my_book_tab').click(function () {
     if ($('.my_book_tab').hasClass('show')) {
       $('.my_book_tab').removeClass('show');
-      $('.my_book_tab + .tabs').css('display','flex');
+      $('.my_book_tab + .book_tabs').css('display','flex');
     }
     else {
       $('.my_book_tab').addClass('show');
-      $('.my_book_tab + .tabs').css('display','none');
+      $('.my_book_tab + .book_tabs').css('display','none');
     }
   });
   $(window).resize(function () {
     if ($(window).width() > 740) {
-      $('.my_book_tab + .tabs').css('display','flex');
+      $('.my_book_tab + .book_tabs').css('display','flex');
     } else {
-      $('.my_book_tab + .tabs').css('display','none');
+      $('.my_book_tab + .book_tabs').css('display','none');
+      $('.my_book_tab').addClass('show');
     }
   });
 
-  //나의 독서 활동 - 0%  
-  if ($(".num_detail_con .reading_count").hasClass("zero") === true) {
-    $('.circular_chart .circle').css('stroke', '#ebebeb');
-  } else {
-    $('.circular_chart .circle').css('stroke', '#f57e25');
-  }
-
   if ($(".study_total button").hasClass("study_btn") === true) {
     $('.study_total').css('align-items', 'center');
+  }
+   if($(".study_total button").hasClass("study_btn hide") === true) {
+    $('.study_total').css('align-items', 'flex-end');
+    $('.study_total .total_layer').css('right', '2%');
   }
 
   // 편집 버튼 클릭 시
@@ -406,6 +459,7 @@ $('.goal_modal_close').on('click', function (e) {
   }
 
   $('.mybook_list_edit').click(function () {
+    $('.bookLink').css('pointer-events','none');
     $('.content.library .book_list_wrap .book_list_thumb li > .combo').css('display','block');
     $('.content.library .book_list_wrap li > .thumb_book').hide();
     $('.content.library .series_info_thumbs .book_info > .combo').css('display','block');
@@ -415,7 +469,8 @@ $('.goal_modal_close').on('click', function (e) {
     $('.selected_book_del').css('display','block');
   });
   $('.mybook_del_edit').click(function () {
-    $('.content.library .book_list_wrap li > .thumb_book').css('display','block');
+    $('.bookLink').css('pointer-events','auto');
+    $('.content.library .book_list_wrap li > .humb_book').css('display','block');
     $('.content.library .book_list_wrap .book_list_thumb li > .combo').hide();
     $('.content.library .series_info_thumbs .book_info > h2').css('display','block');
     $('.content.library .series_info_thumbs .book_info > .combo').hide();
@@ -424,4 +479,25 @@ $('.goal_modal_close').on('click', function (e) {
     $('.selected_book_del').css('display','none');
   });
 
+    //modal
+    $('.series_more_btn').on('click', function (e) {
+      e.preventDefault();
+      $('.modal').addClass('modal-opened');
+      $('body').addClass('bodyscroll');
+    });
+  
+    $('.btn-modal-close').on('click', function (e) {
+      var body = document.body;
+      e.preventDefault();
+      $('.modal').removeClass('modal-opened');
+      $(body).removeClass('bodyscroll');
+    });
+    // 안내
+    $('.reading_info').on('click', function (e) {e.preventDefault();$('.info_layer').css('display','flex');});
+    $('.info_close').on('click', function (e) {e.preventDefault();$('.info_layer').css('display','none');});
+    $('.total_info').on('click', function (e) {e.preventDefault();$('.total_layer').css('display','flex');});
+    $('.total_close').on('click', function (e) {e.preventDefault();$('.total_layer').css('display','none');});
+    $('.nodata_con .selected_info,.mybook_edit .selected_info').on('click', function (e) {e.preventDefault();$('.selected_layer').css('display','flex');});
+    $('.nodata_con .selected_close,.mybook_edit .selected_close').on('click', function (e) {e.preventDefault();$('.selected_layer').css('display','none');});
 });
+
